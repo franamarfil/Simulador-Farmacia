@@ -54,7 +54,6 @@ header.site-header{
   opacity:0.75;
 }
 
-/* Estilos para el logo de la Facultad en la derecha */
 .emblem-faculty{
   margin-left:auto;
   display:flex;
@@ -72,6 +71,11 @@ header.site-header{
   display:grid;
   grid-template-columns:220px 1fr;
   align-items:start;
+}
+
+/* Oculto en PC, visible en celular */
+.mobile-nav-toggle {
+  display: none;
 }
 
 nav.unit-index{
@@ -241,24 +245,68 @@ footer.disclaimer{
   max-width:820px;
 }
 
+/* =========================================
+   ESTILOS PARA CELULAR / TABLET (HASTA 760px)
+   ========================================= */
 @media (max-width:760px){
-  .layout{ grid-template-columns:1fr; }
+  .layout{ 
+    grid-template-columns:1fr; 
+  }
+  
+  /* Configuración del botón desplegable móvil */
+  .mobile-nav-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 20px;
+    background: var(--paper-raised);
+    border: none;
+    border-bottom: 2px solid var(--ink);
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .mobile-nav-toggle svg {
+    transition: transform 0.2s;
+  }
+  .mobile-nav-toggle[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+
+  /* El menú de unidades pasa a ser desplegable */
   nav.unit-index{
-    display:flex;
-    overflow-x:auto;
-    border-right:none;
-    border-bottom:2px solid var(--ink);
-    padding:10px 8px;
-    position:static;
+    display: none; /* Oculto por defecto en celular */
+    flex-direction: column;
+    border-right: none;
+    border-bottom: 2px solid var(--ink);
+    padding: 0;
+    position: static;
+    background: var(--paper);
+  }
+  nav.unit-index.show {
+    display: flex; /* Se muestra al tocar el botón */
   }
   nav.unit-index button{
-    flex-shrink:0;
-    padding:8px 14px;
-    border-left:none;
-    border-bottom:4px solid transparent;
+    width: 100%;
+    border-left: none;
+    border-bottom: 1px solid var(--line);
+    padding: 14px 20px;
   }
-  nav.unit-index button.active{ border-left-color:transparent; border-bottom-color:var(--gold); }
+  nav.unit-index button.active{
+    border-left-color: transparent;
+    border-bottom-color: var(--gold);
+    background: var(--green-soft);
+  }
+
   main#content{ padding:24px 20px 48px; }
   footer.disclaimer{ padding:16px 20px 30px; }
+  
+  /* Ajustes de lectura y comodidad táctil */
   .item-row{ flex-direction:column; }
+  .score-bar { flex-direction: column; gap: 12px; }
+  .item-actions { width: 100%; justify-content: stretch; }
+  .item-actions button { flex: 1; padding: 12px 14px; font-size: 0.95rem; } /* Botones más grandes para dedos */
 }
