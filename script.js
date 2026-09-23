@@ -1,5 +1,8 @@
 const TOTAL_UNITS = 11;
 
+// ==========================================
+// UNIDAD 1
+// ==========================================
 const unit1 = {
   title: 'Farmacia comunitaria "Modelo"',
   intro: 'A continuación se describen situaciones que podrían darse en una farmacia comunitaria. Para cada una, marcá si te parece que cumple o no cumple con la legislación farmacéutica argentina. Después de responder vas a ver el fundamento legal.',
@@ -69,6 +72,88 @@ const unit1 = {
   ]
 };
 
+// ==========================================
+// UNIDAD 2 (NUEVA)
+// ==========================================
+const unit2 = {
+  title: 'Manejo de Estupefacientes y Psicotrópicos',
+  intro: 'A continuación se describen situaciones referidas al manejo, prescripción y dispensa de estupefacientes y psicotrópicos. Marcá si te parece que cumple o no cumple con la normativa nacional.',
+  items: [
+    {
+      text: 'Una farmacia comunitaria decide importar directamente un estupefaciente de la Lista I desde el exterior ingresándolo por la aduana de su provincia.',
+      correct: false,
+      explanation: 'Los estupefacientes de la Lista I solo pueden ser importados por puertos o aeropuertos bajo jurisdicción de la Aduana de la Capital Federal[cite: 18].'
+    },
+    {
+      text: 'El farmacéutico dispensa un psicotrópico de la Lista II con una receta médica común, sellándola, firmándola y archivando el original en la farmacia.',
+      correct: false,
+      explanation: 'Los psicotrópicos de la Lista II solo pueden prescribirse mediante recetas extendidas en formularios oficializados por triplicado, no en recetarios comunes[cite: 19].'
+    },
+    {
+      text: 'Un médico prescribe un estupefaciente en formulario oficializado, indicando una cantidad suficiente para 15 días de tratamiento según la dosis diaria instituida.',
+      correct: false,
+      explanation: 'En ningún caso pueden expenderse recetas cuya cantidad de estupefacientes exceda la necesaria para administrar hasta 10 días de tratamiento[cite: 18].'
+    },
+    {
+      text: 'Un envase de un medicamento que contiene un psicotrópico de la Lista III lleva impresa la leyenda: "Este medicamento debe ser usado exclusivamente bajo prescripción y vigilancia médica y no puede repetirse sin nueva receta médica".',
+      correct: true,
+      explanation: 'Es obligatorio que todo medicamento con psicotrópicos de las Listas II, III y IV lleve esa leyenda en sus envases, rótulos y prospectos en forma bien visible y destacada[cite: 19].'
+    },
+    {
+      text: 'Se presenta una receta oficializada para un psicotrópico de la Lista II que cubre exactamente 20 días de tratamiento según la dosis indicada en letras y números.',
+      correct: true,
+      explanation: 'La normativa permite extender y expender recetas de psicotrópicos de la Lista II por una cantidad que no exceda la necesaria para hasta 20 días de tratamiento[cite: 19].'
+    },
+    {
+      text: 'El farmacéutico dispensa un estupefaciente de la Lista III utilizando únicamente una receta médica manuscrita, fechada y firmada por el profesional médico.',
+      correct: true,
+      explanation: 'Los estupefacientes enumerados en la Lista III pueden despacharse legalmente en las farmacias por receta médica manuscrita, fechada y firmada, sin exigir formulario por triplicado[cite: 18].'
+    },
+    {
+      text: 'Al despachar un psicotrópico de la Lista IV, el farmacéutico sella y firma la receta, la copia en el libro recetario y la archiva por el plazo legal correspondiente de dos años.',
+      correct: true,
+      explanation: 'Los psicotrópicos de las Listas III y IV deben despacharse bajo receta archivada, copiarse en el libro recetario y archivarse por el término exacto de dos años[cite: 19].'
+    },
+    {
+      text: 'Un veterinario matriculado prescribe un estupefaciente en un recetario por duplicado para un animal, y el farmacéutico lo dispensa y archiva directamente sin visado adicional.',
+      correct: false,
+      explanation: 'Las recetas de estupefacientes emitidas por veterinarios deben ser obligatoriamente visadas de forma previa por la autoridad sanitaria competente[cite: 18].'
+    },
+    {
+      text: 'Un médico prescribe un psicotrópico de la Lista IV sin especificar el tamaño del envase. Ante la duda, el farmacéutico despacha el envase de mayor contenido para no interrumpir el tratamiento.',
+      correct: false,
+      explanation: 'Cuando en las recetas se encuentra omitido el tamaño o contenido del envase, el farmacéutico debe despachar indefectiblemente el de menor contenido[cite: 19].'
+    },
+    {
+      text: 'El director técnico destruye las recetas oficializadas de estupefacientes que ya cumplieron el plazo legal de archivo de dos años, sin notificar al Ministerio.',
+      correct: false,
+      explanation: 'Las recetas pueden ser destruidas una vez cumplido el término de dos años, pero requieren siempre la intervención previa de la autoridad sanitaria para labrar el acta respectiva[cite: 18].'
+    },
+    {
+      text: 'Un veterinario prescribe un psicotrópico de la Lista II detallando los datos del dueño del animal, con receta extendida por duplicado y previamente visada por la autoridad sanitaria.',
+      correct: true,
+      explanation: 'Los veterinarios pueden prescribir psicotrópicos de la Lista II cumpliendo con el recetario por duplicado, datos del propietario y visado previo de la autoridad sanitaria[cite: 19].'
+    },
+    {
+      text: 'Ante un caso excepcional, el médico prescribe una dosis de un estupefaciente mayor a la indicada por la Farmacopea, subrayando la dosis con dos líneas y escribiéndola con letras.',
+      correct: true,
+      explanation: 'Para la prescripción de sobredosis, la Ley exige subrayar las dosis con dos líneas y escribirlas con letras, además de informar a la autoridad sanitaria sobre la identidad del paciente[cite: 18].'
+    }
+  ],
+  legalRefs: [
+    'Ley 17.818: Régimen legal de Estupefacientes[cite: 18].',
+    'Ley 19.303: Régimen legal de Psicotrópicos[cite: 19].'
+  ]
+};
+
+// ==========================================
+// CONTROLADOR CENTRAL
+// ==========================================
+const unitsData = {
+  1: unit1,
+  2: unit2
+};
+
 let currentUnit = 1;
 let answers = {};
 
@@ -93,14 +178,15 @@ function renderSidebar(){
   });
 }
 
-function buildUnit1Html(){
-  const total = unit1.items.length;
+function buildUnitHtml(unitNum){
+  const unit = unitsData[unitNum];
+  const total = unit.items.length;
   const answeredKeys = Object.keys(answers);
   const correctCount = answeredKeys.filter(function(idx){
-    return answers[idx] === unit1.items[idx].correct;
+    return answers[idx] === unit.items[idx].correct;
   }).length;
 
-  const itemsHtml = unit1.items.map(function(item, idx){
+  const itemsHtml = unit.items.map(function(item, idx){
     const answered = Object.prototype.hasOwnProperty.call(answers, idx);
     const userVal = answers[idx];
     let resultHtml = '';
@@ -126,11 +212,11 @@ function buildUnit1Html(){
       + '</div></div>' + resultHtml + '</li>';
   }).join('');
 
-  const refsHtml = unit1.legalRefs.map(function(r){ return '<li>' + r + '</li>'; }).join('');
+  const refsHtml = unit.legalRefs.map(function(r){ return '<li>' + r + '</li>'; }).join('');
 
-  return '<p class="unit-label">Unidad 1</p>'
-    + '<h2 class="unit-title">' + unit1.title + '</h2>'
-    + '<p class="unit-intro">' + unit1.intro + '</p>'
+  return '<p class="unit-label">Unidad ' + unitNum + '</p>'
+    + '<h2 class="unit-title">' + unit.title + '</h2>'
+    + '<p class="unit-intro">' + unit.intro + '</p>'
     + '<div class="score-bar" aria-live="polite">'
     + '<div class="stat"><strong>' + answeredKeys.length + '/' + total + '</strong><span>situaciones revisadas</span></div>'
     + '<div class="stat"><strong>' + correctCount + '</strong><span>coincidencias con la normativa</span></div>'
@@ -149,7 +235,7 @@ function buildPlaceholderHtml(n){
     + '</div>';
 }
 
-function attachUnit1Listeners(){
+function attachUnitListeners(){
   document.querySelectorAll('.item-actions button').forEach(function(btn){
     btn.addEventListener('click', function(e){
       const li = e.target.closest('li.item');
@@ -169,9 +255,9 @@ function attachUnit1Listeners(){
 
 function renderContent(){
   const content = document.getElementById('content');
-  if(currentUnit === 1){
-    content.innerHTML = buildUnit1Html();
-    attachUnit1Listeners();
+  if(unitsData[currentUnit]){
+    content.innerHTML = buildUnitHtml(currentUnit);
+    attachUnitListeners();
   } else {
     content.innerHTML = buildPlaceholderHtml(currentUnit);
   }
