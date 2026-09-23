@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Simulador de Legislación Farmacéutica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E2B22;
+    --paper:#EEF0E6;
+    --paper-raised:#E2E6D6;
+    --line:#C6C2AA;
+    --green:#2B5E43;
+    --green-soft:#E1EBE2;
+    --red:#9E3527;
+    --red-soft:#F4E4E0;
+    --gold:#A97724;
+    --focus:#A97724;
+    --font-serif:'Lora', serif;
+    --font-sans:'IBM Plex Sans', sans-serif;
+    --font-stamp:'Special Elite', monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-sans);
+    line-height:1.55;
+  }
+  a{ color:inherit; }
+
+  header.site-header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:18px 28px;
+    border-bottom:2px solid var(--ink);
+  }
+  .emblem-pharmacy{
+    width:46px;
+    height:46px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .emblem-pharmacy svg{
+    width:100%;
+    height:100%;
+  }
+  .site-header h1{
+    font-family:var(--font-serif);
+    font-weight:600;
+    font-size:1.35rem;
+    margin:0;
+  }
+  .site-header p{
+    margin:2px 0 0;
+    font-size:0.85rem;
+    opacity:0.75;
+  }
+
+  .layout{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    align-items:start;
+  }
+
+  nav.unit-index{
+    border-right:2px solid var(--ink);
+    padding:16px 0;
+    position:sticky;
+    top:0;
+  }
+  nav.unit-index button{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    width:100%;
+    text-align:left;
+    background:none;
+    border:none;
+    border-left:4px solid transparent;
+    padding:10px 20px;
+    font-family:var(--font-sans);
+    font-size:0.95rem;
+    color:var(--ink);
+    cursor:pointer;
+  }
+  nav.unit-index button .num{
+    font-family:var(--font-serif);
+    font-size:0.95rem;
+    opacity:0.5;
+    width:1.5em;
+    flex-shrink:0;
+  }
+  nav.unit-index button:hover{ background:var(--paper-raised); }
+  nav.unit-index button.active{
+    border-left-color:var(--gold);
+    background:var(--paper-raised);
+    font-weight:600;
+  }
+  nav.unit-index button:focus-visible,
+  button:focus-visible{
+    outline:2px solid var(--focus);
+    outline-offset:2px;
+  }
+
+  main#content{
+    padding:36px 40px 60px;
+    max-width:760px;
+  }
+  .unit-label{
+    font-size:0.82rem;
+    opacity:0.65;
+    margin:0 0 4px;
+  }
+  h2.unit-title{
+    font-family:var(--font-serif);
+    font-size:1.85rem;
+    margin:0 0 14px;
+    line-height:1.2;
+  }
+  .unit-intro{
+    margin:0 0 24px;
+    max-width:62ch;
+  }
+
+  .score-bar{
+    display:flex;
+    gap:32px;
+    margin-bottom:22px;
+    padding:12px 18px;
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+  }
+  .score-bar .stat strong{
+    display:block;
+    font-family:var(--font-serif);
+    font-size:1.35rem;
+    line-height:1.1;
+  }
+  .score-bar .stat span{ font-size:0.78rem; opacity:0.7; }
+
+  ul.item-list{
+    list-style:none;
+    margin:0 0 32px;
+    padding:0;
+    border-top:1px solid var(--line);
+  }
+  li.item{ border-bottom:1px solid var(--line); padding:16px 4px; }
+  .item-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+  }
+  .item-text{ margin:0; max-width:54ch; }
+  .item-num{ font-family:var(--font-serif); opacity:0.5; margin-right:6px; }
+
+  .item-actions{ display:flex; gap:8px; flex-shrink:0; }
+  .item-actions button{
+    font-family:var(--font-sans);
+    font-size:0.85rem;
+    padding:8px 14px;
+    border:1px solid var(--ink);
+    background:var(--paper);
+    cursor:pointer;
+  }
+  .item-actions button:hover{ background:var(--paper-raised); }
+  .item-actions button.selected-true{ background:var(--green-soft); border-color:var(--green); }
+  .item-actions button.selected-false{ background:var(--red-soft); border-color:var(--red); }
+  .item-actions button:disabled{ cursor:default; opacity:0.9; }
+
+  .item-result{
+    margin-top:14px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .stamp{
+    font-family:var(--font-stamp);
+    font-size:0.72rem;
+    letter-spacing:0.04em;
+    padding:6px 10px;
+    border:2px solid currentColor;
+    transform:rotate(-4deg);
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .stamp.ok{ color:var(--green); }
+  .stamp.bad{ color:var(--red); }
+  .result-text{ margin:0; font-size:0.92rem; max-width:50ch; }
+  .result-text .verdict{ display:block; font-weight:600; margin-bottom:4px; }
+
+  @media (prefers-reduced-motion: no-preference){
+    .item-result{ animation:settle 0.18s ease-out; }
+  }
+  @keyframes settle{ from{ opacity:0; transform:translateY(-4px);} to{ opacity:1; transform:translateY(0);} }
+
+  .legal-summary{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    padding:20px 24px;
+    margin-bottom:26px;
+  }
+  .legal-summary h3{
+    font-family:var(--font-serif);
+    font-size:1.1rem;
+    margin:0 0 10px;
+  }
+  .legal-summary ul{ margin:0; padding-left:18px; }
+  .legal-summary li{ margin-bottom:6px; font-size:0.9rem; }
+
+  .reset-btn{
+    font-family:var(--font-sans);
+    font-size:0.85rem;
+    background:none;
+    border:1px solid var(--ink);
+    padding:8px 16px;
+    cursor:pointer;
+  }
+  .reset-btn:hover{ background:var(--paper-raised); }
+
+  .placeholder{ padding:30px 0 10px; max-width:58ch; }
+  .placeholder p{ margin:0 0 14px; }
+
+  footer.disclaimer{
+    border-top:2px solid var(--ink);
+    padding:18px 40px 34px;
+    font-size:0.8rem;
+    opacity:0.75;
+    max-width:820px;
+  }
+
+  @media (max-width:760px){
+    .layout{ grid-template-columns:1fr; }
+    nav.unit-index{
+      display:flex;
+      overflow-x:auto;
+      border-right:none;
+      border-bottom:2px solid var(--ink);
+      padding:10px 8px;
+      position:static;
+    }
+    nav.unit-index button{
+      flex-shrink:0;
+      padding:8px 14px;
+      border-left:none;
+      border-bottom:4px solid transparent;
+    }
+    nav.unit-index button.active{ border-left-color:transparent; border-bottom-color:var(--gold); }
+    main#content{ padding:24px 20px 48px; }
+    footer.disclaimer{ padding:16px 20px 30px; }
+    .item-row{ flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <!-- Logo Cruz Verde de Farmacia con Copa de Higía -->
+  <div class="emblem-pharmacy" title="Logo Farmacia">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Cruz Verde -->
+      <path d="M 36 6 H 64 V 36 H 94 V 64 H 64 V 94 H 36 V 64 H 6 V 36 H 36 Z" fill="#009A3E"/>
+      <!-- Copa de Higía en Blanco -->
+      <path d="M 32 44 C 32 58 68 58 68 44 C 68 38 32 38 32 44 Z" fill="#FFFFFF"/>
+      <path d="M 34 43 C 34 54 66 54 66 43 H 34 Z" fill="#009A3E"/>
+      <path d="M 48 53 H 52 V 68 H 48 Z" fill="#FFFFFF"/>
+      <path d="M 42 68 H 58 V 72 H 42 Z" fill="#FFFFFF"/>
+      <!-- Serpiente de Higía -->
+      <path d="M 50 67 C 42 67 40 60 50 56 C 60 52 58 45 48 45 C 43 45 40 48 42 51 C 44 54 54 51 52 45 C 50 38 60 28 50 28 C 42 28 41 35 47 38" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+    </svg>
+  </div>
+  <div>
+    <h1>Simulador de legislación farmacéutica</h1>
+    <p>Casos de ejercicio legal e ilegal de la farmacia en la Argentina</p>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="unit-index" id="unitIndex" aria-label="Selector de unidades"></nav>
+  <main id="content"></main>
+</div>
+
+<footer class="disclaimer">
+  Contenido elaborado con fines educativos a partir de conocimiento general sobre la Ley 17.565 y normativa conexa.
+  Antes de usarlo como material de estudio, verificá los fundamentos legales con la bibliografía oficial de tu cátedra:
+  puede haber actualizaciones normativas o variaciones según la jurisdicción provincial.
+</footer>
+
+<script>
+  const TOTAL_UNITS = 11;
+
+  const unit1 = {
+    title: 'Farmacia comunitaria "Modelo"',
+    intro: 'A continuación se describen situaciones que podrían darse en una farmacia comunitaria. Para cada una, marcá si te parece que cumple o no cumple con la legislación farmacéutica argentina. Después de responder vas a ver el fundamento legal.',
+    items: [
+      {
+        text: 'El farmacéutico director técnico, matriculado, se encuentra presente en el mostrador durante todo el horario de atención.',
+        correct: true,
+        explanation: 'La Ley 17.565 exige que toda farmacia funcione bajo la dirección técnica de un farmacéutico, con presencia efectiva durante el horario de atención al público.'
+      },
+      {
+        text: 'Se le dispensa amoxicilina (un antibiótico) a un cliente sin receta médica, porque asegura que "ya sabe lo que tiene".',
+        correct: false,
+        explanation: 'Los antibióticos son medicamentos de venta bajo receta. Dispensarlos sin ella infringe la Ley 17.565 y las disposiciones de la ANMAT sobre condición de venta de medicamentos.'
+      },
+      {
+        text: 'Dentro de la farmacia en un lugar visible se encuentra exhibido el título universitario del profesional.',
+        correct: true,
+        explanation: 'La normativa exige exhibir públicamente el título profesional e identificar al profesional responsable de la dirección técnica del establecimiento.'
+      },
+      {
+        text: 'Los psicofármacos se guardan bajo llave y cada venta queda asentada en el libro de psicotrópicos correspondiente.',
+        correct: true,
+        explanation: 'El control de estupefacientes y psicotrópicos exige resguardo especial y registro en libros habilitados, conforme a la Ley 19.303 y las disposiciones de la ANMAT.'
+      },
+      {
+        text: 'Según los síntomas que describe un paciente, el farmacéutico determina que tiene una infección y le indica qué antibiótico tomar, sin derivarlo a un médico.',
+        correct: false,
+        explanation: 'Diagnosticar y prescribir excede las incumbencias profesionales del farmacéutico e invade el ejercicio de la medicina.'
+      },
+      {
+        text: 'Antes de reponer la góndola, el personal revisa las fechas de vencimiento y retira los productos vencidos de la venta.',
+        correct: true,
+        explanation: 'Controlar los vencimientos es una obligación básica dentro de las buenas prácticas de dispensación y conservación de medicamentos.'
+      },
+      {
+        text: 'La farmacia permanece abierta al público toda la jornada, pero el farmacéutico director técnico nunca está presente: solo atiende personal auxiliar.',
+        correct: false,
+        explanation: 'Sin dirección técnica presente, el establecimiento no puede funcionar legalmente durante ese horario, conforme a la Ley 17.565.'
+      },
+      {
+        text: 'En la vidriera se exhibe un cartel promocionando descuentos en un medicamento de venta bajo receta, dirigido directamente al público.',
+        correct: false,
+        explanation: 'La publicidad de medicamentos de venta bajo receta dirigida al público general está prohibida; solo puede promocionarse a profesionales de la salud.'
+      },
+      {
+        text: 'La farmacia cuenta con una heladera destinada exclusivamente a vacunas y medicamentos termolábiles, con registro de temperatura.',
+        correct: true,
+        explanation: 'Mantener la cadena de frío para productos termolábiles forma parte de las buenas prácticas de almacenamiento exigidas a los establecimientos farmacéuticos.'
+      },
+      {
+        text: 'Las muestras médicas gratuitas que dejó un visitador de un laboratorio se guardan junto al stock y se venden como si fueran unidades normales.',
+        correct: false,
+        explanation: 'Las muestras gratis no son mercadería: está prohibida su comercialización. Deben identificarse y destinarse solo a fines promocionales autorizados.'
+      },
+      {
+        text: 'Con el consentimiento del paciente, y ante la falta de stock de la marca recetada, el farmacéutico dispensa el equivalente genérico con igual principio activo, dosis y forma farmacéutica.',
+        correct: true,
+        explanation: 'La Ley 25.649 de prescripción de medicamentos por nombre genérico habilita al farmacéutico a sustituir por una especialidad de igual composición cuando el paciente lo consiente.'
+      }
+    ],
+    legalRefs: [
+      'Ley 17.565 (Ejercicio de la farmacia) y su Decreto Reglamentario 7123/68: marco general de habilitación y dirección técnica.',
+      'Ley 25.649: prescripción de medicamentos por nombre genérico y sustitución farmacéutica.',
+      'Ley 19.303 y disposiciones de la ANMAT: control de estupefacientes y psicotrópicos.',
+      'Ley 16.463 y disposiciones de la ANMAT: registro, condición de venta y publicidad de medicamentos.',
+      'Incumbencias profesionales del farmacéutico: alcance del título, sin facultades de diagnóstico ni prescripción médica.'
+    ]
+  };
+
+  let currentUnit = 1;
+  let answers = {};
+
+  function renderSidebar(){
+    const nav = document.getElementById('unitIndex');
+    let html = '';
+    for(let n = 1; n <= TOTAL_UNITS; n++){
+      const activeClass = n === currentUnit ? 'active' : '';
+      const label = String(n).padStart(2, '0');
+      html += '<button data-unit="' + n + '" class="' + activeClass + '">'
+            + '<span class="num">' + label + '</span> Unidad ' + n
+            + '</button>';
+    }
+    nav.innerHTML = html;
+    nav.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        currentUnit = Number(btn.dataset.unit);
+        answers = {};
+        renderSidebar();
+        renderContent();
+      });
+    });
+  }
+
+  function buildUnit1Html(){
+    const total = unit1.items.length;
+    const answeredKeys = Object.keys(answers);
+    const correctCount = answeredKeys.filter(function(idx){
+      return answers[idx] === unit1.items[idx].correct;
+    }).length;
+
+    const itemsHtml = unit1.items.map(function(item, idx){
+      const answered = Object.prototype.hasOwnProperty.call(answers, idx);
+      const userVal = answers[idx];
+      let resultHtml = '';
+      if(answered){
+        const isRight = userVal === item.correct;
+        const stampClass = item.correct ? 'ok' : 'bad';
+        const stampLabel = item.correct ? 'Ajustado a la normativa' : 'Infracción';
+        const verdict = isRight ? 'Coincidiste con la normativa.' : 'No coincidiste: revisá el fundamento.';
+        resultHtml = '<div class="item-result">'
+          + '<span class="stamp ' + stampClass + '">' + stampLabel + '</span>'
+          + '<p class="result-text"><span class="verdict">' + verdict + '</span>' + item.explanation + '</p>'
+          + '</div>';
+      }
+      const trueSelected = answered && userVal === true ? 'selected-true' : '';
+      const falseSelected = answered && userVal === false ? 'selected-false' : '';
+      const disabledAttr = answered ? 'disabled' : '';
+      return '<li class="item" data-idx="' + idx + '">'
+        + '<div class="item-row">'
+        + '<p class="item-text"><span class="item-num">' + (idx + 1) + '</span>' + item.text + '</p>'
+        + '<div class="item-actions">'
+        + '<button data-val="true" class="' + trueSelected + '" ' + disabledAttr + '>Cumple</button>'
+        + '<button data-val="false" class="' + falseSelected + '" ' + disabledAttr + '>No cumple</button>'
+        + '</div></div>' + resultHtml + '</li>';
+    }).join('');
+
+    const refsHtml = unit1.legalRefs.map(function(r){ return '<li>' + r + '</li>'; }).join('');
+
+    return '<p class="unit-label">Unidad 1</p>'
+      + '<h2 class="unit-title">' + unit1.title + '</h2>'
+      + '<p class="unit-intro">' + unit1.intro + '</p>'
+      + '<div class="score-bar" aria-live="polite">'
+      + '<div class="stat"><strong>' + answeredKeys.length + '/' + total + '</strong><span>situaciones revisadas</span></div>'
+      + '<div class="stat"><strong>' + correctCount + '</strong><span>coincidencias con la normativa</span></div>'
+      + '</div>'
+      + '<ul class="item-list">' + itemsHtml + '</ul>'
+      + '<div class="legal-summary"><h3>Para repasar</h3><ul>' + refsHtml + '</ul></div>'
+      + '<button class="reset-btn" id="resetBtn">Reiniciar ejercicio</button>';
+  }
+
+  function buildPlaceholderHtml(n){
+    return '<p class="unit-label">Unidad ' + n + '</p>'
+      + '<h2 class="unit-title">Contenido en preparación</h2>'
+      + '<div class="placeholder">'
+      + '<p>Todavía no se cargó el escenario de esta unidad.</p>'
+      + '<p>Compartí el tema del programa que corresponde a la Unidad ' + n + ' y se puede armar un ejercicio con el mismo formato que la Unidad 1.</p>'
+      + '</div>';
+  }
+
+  function attachUnit1Listeners(){
+    document.querySelectorAll('.item-actions button').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        const li = e.target.closest('li.item');
+        const idx = li.dataset.idx;
+        answers[idx] = e.target.dataset.val === 'true';
+        renderContent();
+      });
+    });
+    const resetBtn = document.getElementById('resetBtn');
+    if(resetBtn){
+      resetBtn.addEventListener('click', function(){
+        answers = {};
+        renderContent();
+      });
+    }
+  }
+
+  function renderContent(){
+    const content = document.getElementById('content');
+    if(currentUnit === 1){
+      content.innerHTML = buildUnit1Html();
+      attachUnit1Listeners();
+    } else {
+      content.innerHTML = buildPlaceholderHtml(currentUnit);
+    }
+  }
+
+  renderSidebar();
+  renderContent();
+</script>
+</body>
+</html>
