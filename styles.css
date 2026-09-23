@@ -54,6 +54,20 @@ header.site-header{
   opacity:0.75;
 }
 
+/* Estilos para el logo de la Facultad en la derecha */
+.emblem-faculty{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.emblem-faculty img{
+  max-height:50px;
+  width:auto;
+  object-fit:contain;
+}
+
 .layout{
   display:grid;
   grid-template-columns:220px 1fr;
