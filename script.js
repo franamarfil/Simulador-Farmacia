@@ -1,5 +1,8 @@
 const TOTAL_UNITS = 11;
 
+// ==========================================
+// UNIDAD 1
+// ==========================================
 const unit1 = {
   title: 'Farmacia comunitaria "Modelo"',
   intro: 'A continuación se describen situaciones que podrían darse en una farmacia comunitaria. Para cada una, marcá si te parece que cumple o no cumple con la legislación farmacéutica argentina. Después de responder vas a ver el fundamento legal.',
@@ -69,6 +72,9 @@ const unit1 = {
   ]
 };
 
+// ==========================================
+// UNIDAD 2
+// ==========================================
 const unit2 = {
   title: 'Manejo de Estupefacientes y Psicotrópicos',
   intro: 'A continuación se describen situaciones referidas al manejo, prescripción y dispensa de estupefacientes y psicotrópicos. Marcá si te parece que cumple o no cumple con la normativa nacional.',
@@ -140,9 +146,166 @@ const unit2 = {
   ]
 };
 
+// ==========================================
+// UNIDAD 3
+// ==========================================
+const unit3 = {
+  title: 'Control, Fiscalización y Penalidades (Ley 17.818)',
+  intro: 'Examen de nivel universitario. Analizá los siguientes casos sobre importación, registros documentales y régimen sancionatorio de estupefacientes según la Ley N° 17.818. Evaluá la legalidad de cada situación.',
+  items: [
+    {
+      text: 'Una droguería decide importar un estupefaciente de la Lista I ingresándolo por la aduana de su provincia para abaratar costos logísticos terrestres.',
+      correct: false,
+      explanation: 'Falso. El Artículo 5° de la Ley 17.818 establece que solo podrán ser importados por puertos o aeropuertos bajo jurisdicción de la Aduana de la Capital Federal.'
+    },
+    {
+      text: 'Una farmacia tramita la importación de hojas de coca para expendio legítimo a través de la aduana de la frontera con la República de Bolivia.',
+      correct: true,
+      explanation: 'Correcto. El Artículo 5° exceptúa a las hojas de coca para expendio legítimo, permitiendo que ingresen por aduanas de frontera con Bolivia.'
+    },
+    {
+      text: 'El certificado oficial de importación de estupefacientes emitido por la autoridad sanitaria nacional tiene una validez legal de un año calendario (365 días).',
+      correct: false,
+      explanation: 'Falso. El certificado oficial de importación caduca a los ciento ochenta (180) días de la fecha de su emisión (Art. 6).'
+    },
+    {
+      text: 'El certificado oficial otorgado para la exportación de estupefacientes caduca exactamente a los sesenta (60) días de la fecha de su emisión.',
+      correct: true,
+      explanation: 'Correcto. Según el Artículo 7°, dicho certificado de exportación caduca a los 60 días de emitido.'
+    },
+    {
+      text: 'Una carga de estupefacientes en tránsito es sometida a un cambio de embalaje en la aduana local para facilitar su estiba, mediando únicamente la autorización del despachante de aduana.',
+      correct: false,
+      explanation: 'Falso. Los estupefacientes en tránsito no pueden modificar su embalaje ni ser sometidos a manipulación alguna sin autorización previa de la autoridad sanitaria nacional (Art. 8).'
+    },
+    {
+      text: 'Los establecimientos habilitados para elaborar estupefacientes inscriben diariamente sus operaciones en registros especiales, foliados y rubricados por la autoridad sanitaria.',
+      correct: true,
+      explanation: 'Correcto. El Artículo 13 exige registrar diariamente las operaciones (fecha, proveedor, clase y cantidad de materias primas) en libros rubricados.'
+    },
+    {
+      text: 'La enajenación de estupefacientes entre laboratorios y farmacias se realiza mediante formularios impresos confeccionados por duplicado, quedando el original para el adquirente.',
+      correct: false,
+      explanation: 'Falso. El Artículo 14 establece que los formularios de enajenación deben confeccionarse por triplicado (original para el adquirente, duplicado a la autoridad sanitaria y triplicado para el cedente).'
+    },
+    {
+      text: 'Las preparaciones que contengan estupefacientes de la lista I (excepto resina de cannabis, paja de adormidera y heroína) solo podrán ser prescriptas mediante recetas extendidas en formularios oficializados.',
+      correct: true,
+      explanation: 'Correcto. Lo dispone el Artículo 16, requiriendo receta manuscrita, cantidades en letras, y datos del paciente.'
+    },
+    {
+      text: 'Las recetas de estupefacientes de la Lista I pueden ser despachadas hasta en dos oportunidades si el médico indica explícitamente "tratamiento prolongado" en el formulario.',
+      correct: false,
+      explanation: 'Falso. El Artículo 16 es taxativo: el farmacéutico las despachará una única vez.'
+    },
+    {
+      text: 'Las recetas oficializadas despachadas por la farmacia deben copiarse en el libro recetario y archivarse por el director técnico durante un plazo de dos (2) años.',
+      correct: true,
+      explanation: 'Correcto. Los originales deben ser copiados y archivados por el término de dos años, tras los cuales pueden ser destruidos previa acta (Art. 16).'
+    },
+    {
+      text: 'Las infracciones a la ley nacional de estupefacientes prescriben a los cinco (5) años de cometidas.',
+      correct: false,
+      explanation: 'Falso. Las infracciones a esta ley y a sus reglamentos prescriben a los dos (2) años (Art. 26).'
+    },
+    {
+      text: 'En caso de imponerse una sanción de clausura o inhabilitación por infracción, el recurso de apelación se concederá con efecto suspensivo.',
+      correct: true,
+      explanation: 'Correcto. El Artículo 28 indica que el recurso se concede al solo efecto devolutivo, salvo cuando la pena sea de clausura o inhabilitación, en que se concederá con efecto suspensivo.'
+    }
+  ],
+  legalRefs: [
+    'Ley 17.818: Cap. III (Importación y Exportación, arts. 5 al 8).',
+    'Ley 17.818: Cap. IV y V (Registros y Enajenación, arts. 13 y 14).',
+    'Ley 17.818: Cap. VI (Despacho al público, art. 16).',
+    'Ley 17.818: Cap. IX y X (Prescripción y Procedimiento, arts. 26 y 28).'
+  ]
+};
+
+// ==========================================
+// UNIDAD 4 (NUEVA)
+// ==========================================
+const unit4 = {
+  title: 'Derechos del Paciente y Documentación Clínica (Ley 26.529)',
+  intro: 'Examen de nivel universitario. Evaluá la legalidad de los siguientes escenarios de práctica profesional relacionados con el resguardo de la historia clínica, el consentimiento informado y los derechos esenciales del paciente.',
+  items: [
+    {
+      text: 'Un médico decide eximirse del deber de asistencia hacia un paciente debido a las creencias políticas de este último, dejando constancia verbal y retirándose del establecimiento sin derivarlo a otro profesional.',
+      correct: false,
+      explanation: 'Falso. El Artículo 2 inc. a) establece que la asistencia no debe tener menoscabo por ideas políticas o creencias, y el profesional sólo puede eximirse cuando se hubiere hecho cargo efectivamente otro profesional competente[cite: 59].'
+    },
+    {
+      text: 'Un paciente diagnosticado con una patología oncológica severa solicita expresamente por escrito que no se le brinde información sobre la evolución y pronóstico de su enfermedad. El equipo médico acata la decisión.',
+      correct: true,
+      explanation: 'Correcto. Según el Artículo 2 inc. f), el derecho a la información sanitaria incluye también el derecho de "no recibir" la mencionada información[cite: 60].'
+    },
+    {
+      text: 'El médico tratante informa detalladamente sobre el pronóstico de un paciente mayor de edad, lúcido y capaz, a su hermano, sin haber solicitado autorización previa al propio paciente.',
+      correct: false,
+      explanation: 'Falso. El Artículo 4 dicta que la información sanitaria sólo podrá ser brindada a terceras personas con autorización explícita del paciente, salvo casos de incapacidad[cite: 60].'
+    },
+    {
+      text: 'Un paciente será sometido a una intervención quirúrgica programada. El cirujano recaba el consentimiento informado únicamente de forma verbal frente a dos testigos del cuerpo de enfermería.',
+      correct: false,
+      explanation: 'Falso. El Artículo 7 establece excepciones a la regla verbal; en caso de internación, intervención quirúrgica y procedimientos invasivos o riesgosos, el consentimiento debe ser por escrito y debidamente suscrito[cite: 61].'
+    },
+    {
+      text: 'Llega un paciente inconsciente a la guardia tras un accidente grave que pone en riesgo inminente su vida. El equipo quirúrgico procede a operarlo de urgencia sin requerir consentimiento informado.',
+      correct: true,
+      explanation: 'Correcto. El Artículo 9 exime al profesional de requerir el consentimiento cuando mediare una situación de emergencia con grave peligro para la vida y el paciente no pudiera darlo por sí o a través de sus representantes[cite: 61].'
+    },
+    {
+      text: 'Una persona mayor de edad deja directivas anticipadas por escrito solicitando que se le apliquen prácticas eutanásicas en caso de entrar en estado vegetativo irreversible. La institución archiva el documento para su cumplimiento futuro.',
+      correct: false,
+      explanation: 'Falso. El Artículo 11 habilita las directivas anticipadas, pero establece expresamente que aquellas que impliquen desarrollar prácticas eutanásicas se tendrán como inexistentes[cite: 62].'
+    },
+    {
+      text: 'Un paciente solicita a su simple requerimiento una copia de su historia clínica. El establecimiento asistencial se compromete a entregarla certificada en un plazo de cuarenta y ocho (48) horas.',
+      correct: true,
+      explanation: 'Correcto. El Artículo 14 establece que el paciente es el titular de la historia clínica y la entrega de la copia autenticada debe realizarse dentro de las 48 horas de solicitada[cite: 62].'
+    },
+    {
+      text: 'Un paciente decide abandonar su tratamiento farmacológico de manera unilateral. El médico omite este hecho en la historia clínica al considerar que carece de relevancia clínica actual.',
+      correct: false,
+      explanation: 'Falso. El Artículo 16 de Integridad dispone que forman parte de la historia clínica las prácticas o tratamientos realizados, rechazados o abandonados, requiriendo un breve sumario del acto[cite: 63].'
+    },
+    {
+      text: 'Un sanatorio utiliza un sistema informatizado de historias clínicas que permite sobreescribir y modificar los asientos anteriores para corregir errores ortográficos sin dejar rastro de la alteración.',
+      correct: false,
+      explanation: 'Falso. El Artículo 13 exige inalterabilidad y obliga a utilizar medios no reescribibles de almacenamiento, con control de modificación de campos para asegurar la integridad de los datos[cite: 62].'
+    },
+    {
+      text: 'El archivo central de un sanatorio privado procede a disponer libremente de las historias clínicas físicas de aquellos pacientes cuya última actuación médica fue registrada hace doce (12) años.',
+      correct: true,
+      explanation: 'Correcto. El Artículo 18 de Inviolabilidad establece que la obligación de guarda rige durante un plazo mínimo de diez (10) años computados desde la última actuación registrada[cite: 63].'
+    },
+    {
+      text: 'Tras el fallecimiento de un paciente, su cónyuge solicita acceso a la historia clínica acreditando legalmente su vínculo. El hospital se niega alegando que el derecho se extingue con la muerte del titular.',
+      correct: false,
+      explanation: 'Falso. El Artículo 19 inc. b) legitima expresamente al cónyuge o conviviente en unión de hecho y a los herederos forzosos a solicitar la historia clínica[cite: 63].'
+    },
+    {
+      text: 'Ante el silencio y la negativa infundada de un profesional a entregar la copia de una historia clínica, el paciente dispone del ejercicio de la acción directa de "habeas data".',
+      correct: true,
+      explanation: 'Correcto. El Artículo 20 establece que frente a la negativa, demora o silencio, el sujeto legitimado dispone de la acción directa de "habeas data", la cual a nivel nacional es exenta de gastos[cite: 64].'
+    }
+  ],
+  legalRefs: [
+    'Ley 26.529: Derechos del paciente y exenciones de asistencia (Art. 2)[cite: 59, 60].',
+    'Ley 26.529: Manejo de Información Sanitaria (Art. 4)[cite: 60].',
+    'Ley 26.529: Consentimiento Informado, Instrumentación y Excepciones (Arts. 7, 9, 11)[cite: 61, 62].',
+    'Ley 26.529: Historia Clínica, titularidad, inviolabilidad y plazos (Arts. 13, 14, 16, 18, 19, 20)[cite: 62, 63, 64].'
+  ]
+};
+
+// ==========================================
+// CONTROLADOR CENTRAL
+// ==========================================
 const unitsData = {
   1: unit1,
-  2: unit2
+  2: unit2,
+  3: unit3,
+  4: unit4
 };
 
 let currentUnit = 1;
