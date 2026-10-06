@@ -223,7 +223,7 @@ const unit3 = {
 };
 
 // ==========================================
-// UNIDAD 4 (NUEVA)
+// UNIDAD 4
 // ==========================================
 const unit4 = {
   title: 'Derechos del Paciente y Documentación Clínica (Ley 26.529)',
@@ -232,69 +232,221 @@ const unit4 = {
     {
       text: 'Un médico decide eximirse del deber de asistencia hacia un paciente debido a las creencias políticas de este último, dejando constancia verbal y retirándose del establecimiento sin derivarlo a otro profesional.',
       correct: false,
-      explanation: 'Falso. El Artículo 2 inc. a) establece que la asistencia no debe tener menoscabo por ideas políticas o creencias, y el profesional sólo puede eximirse cuando se hubiere hecho cargo efectivamente otro profesional competente[cite: 59].'
+      explanation: 'Falso. El Artículo 2 inc. a) establece que la asistencia no debe tener menoscabo por ideas políticas o creencias, y el profesional sólo puede eximirse cuando se hubiere hecho cargo efectivamente otro profesional competente.'
     },
     {
       text: 'Un paciente diagnosticado con una patología oncológica severa solicita expresamente por escrito que no se le brinde información sobre la evolución y pronóstico de su enfermedad. El equipo médico acata la decisión.',
       correct: true,
-      explanation: 'Correcto. Según el Artículo 2 inc. f), el derecho a la información sanitaria incluye también el derecho de "no recibir" la mencionada información[cite: 60].'
+      explanation: 'Correcto. Según el Artículo 2 inc. f), el derecho a la información sanitaria incluye también el derecho de "no recibir" la mencionada información.'
     },
     {
       text: 'El médico tratante informa detalladamente sobre el pronóstico de un paciente mayor de edad, lúcido y capaz, a su hermano, sin haber solicitado autorización previa al propio paciente.',
       correct: false,
-      explanation: 'Falso. El Artículo 4 dicta que la información sanitaria sólo podrá ser brindada a terceras personas con autorización explícita del paciente, salvo casos de incapacidad[cite: 60].'
+      explanation: 'Falso. El Artículo 4 dicta que la información sanitaria sólo podrá ser brindada a terceras personas con autorización explícita del paciente, salvo casos de incapacidad.'
     },
     {
       text: 'Un paciente será sometido a una intervención quirúrgica programada. El cirujano recaba el consentimiento informado únicamente de forma verbal frente a dos testigos del cuerpo de enfermería.',
       correct: false,
-      explanation: 'Falso. El Artículo 7 establece excepciones a la regla verbal; en caso de internación, intervención quirúrgica y procedimientos invasivos o riesgosos, el consentimiento debe ser por escrito y debidamente suscrito[cite: 61].'
+      explanation: 'Falso. El Artículo 7 establece excepciones a la regla verbal; en caso de internación, intervención quirúrgica y procedimientos invasivos o riesgosos, el consentimiento debe ser por escrito y debidamente suscrito.'
     },
     {
       text: 'Llega un paciente inconsciente a la guardia tras un accidente grave que pone en riesgo inminente su vida. El equipo quirúrgico procede a operarlo de urgencia sin requerir consentimiento informado.',
       correct: true,
-      explanation: 'Correcto. El Artículo 9 exime al profesional de requerir el consentimiento cuando mediare una situación de emergencia con grave peligro para la vida y el paciente no pudiera darlo por sí o a través de sus representantes[cite: 61].'
+      explanation: 'Correcto. El Artículo 9 exime al profesional de requerir el consentimiento cuando mediare una situación de emergencia con grave peligro para la vida y el paciente no pudiera darlo por sí o a través de sus representantes.'
     },
     {
       text: 'Una persona mayor de edad deja directivas anticipadas por escrito solicitando que se le apliquen prácticas eutanásicas en caso de entrar en estado vegetativo irreversible. La institución archiva el documento para su cumplimiento futuro.',
       correct: false,
-      explanation: 'Falso. El Artículo 11 habilita las directivas anticipadas, pero establece expresamente que aquellas que impliquen desarrollar prácticas eutanásicas se tendrán como inexistentes[cite: 62].'
+      explanation: 'Falso. El Artículo 11 habilita las directivas anticipadas, pero establece expresamente que aquellas que impliquen desarrollar prácticas eutanásicas se tendrán como inexistentes.'
     },
     {
       text: 'Un paciente solicita a su simple requerimiento una copia de su historia clínica. El establecimiento asistencial se compromete a entregarla certificada en un plazo de cuarenta y ocho (48) horas.',
       correct: true,
-      explanation: 'Correcto. El Artículo 14 establece que el paciente es el titular de la historia clínica y la entrega de la copia autenticada debe realizarse dentro de las 48 horas de solicitada[cite: 62].'
+      explanation: 'Correcto. El Artículo 14 establece que el paciente es el titular de la historia clínica y la entrega de la copia autenticada debe realizarse dentro de las 48 horas de solicitada.'
     },
     {
       text: 'Un paciente decide abandonar su tratamiento farmacológico de manera unilateral. El médico omite este hecho en la historia clínica al considerar que carece de relevancia clínica actual.',
       correct: false,
-      explanation: 'Falso. El Artículo 16 de Integridad dispone que forman parte de la historia clínica las prácticas o tratamientos realizados, rechazados o abandonados, requiriendo un breve sumario del acto[cite: 63].'
+      explanation: 'Falso. El Artículo 16 de Integridad dispone que forman parte de la historia clínica las prácticas o tratamientos realizados, rechazados o abandonados, requiriendo un breve sumario del acto.'
     },
     {
       text: 'Un sanatorio utiliza un sistema informatizado de historias clínicas que permite sobreescribir y modificar los asientos anteriores para corregir errores ortográficos sin dejar rastro de la alteración.',
       correct: false,
-      explanation: 'Falso. El Artículo 13 exige inalterabilidad y obliga a utilizar medios no reescribibles de almacenamiento, con control de modificación de campos para asegurar la integridad de los datos[cite: 62].'
+      explanation: 'Falso. El Artículo 13 exige inalterabilidad y obliga a utilizar medios no reescribibles de almacenamiento, con control de modificación de campos para asegurar la integridad de los datos.'
     },
     {
       text: 'El archivo central de un sanatorio privado procede a disponer libremente de las historias clínicas físicas de aquellos pacientes cuya última actuación médica fue registrada hace doce (12) años.',
       correct: true,
-      explanation: 'Correcto. El Artículo 18 de Inviolabilidad establece que la obligación de guarda rige durante un plazo mínimo de diez (10) años computados desde la última actuación registrada[cite: 63].'
+      explanation: 'Correcto. El Artículo 18 de Inviolabilidad establece que la obligación de guarda rige durante un plazo mínimo de diez (10) años computados desde la última actuación registrada.'
     },
     {
       text: 'Tras el fallecimiento de un paciente, su cónyuge solicita acceso a la historia clínica acreditando legalmente su vínculo. El hospital se niega alegando que el derecho se extingue con la muerte del titular.',
       correct: false,
-      explanation: 'Falso. El Artículo 19 inc. b) legitima expresamente al cónyuge o conviviente en unión de hecho y a los herederos forzosos a solicitar la historia clínica[cite: 63].'
+      explanation: 'Falso. El Artículo 19 inc. b) legitima expresamente al cónyuge o conviviente en unión de hecho y a los herederos forzosos a solicitar la historia clínica.'
     },
     {
       text: 'Ante el silencio y la negativa infundada de un profesional a entregar la copia de una historia clínica, el paciente dispone del ejercicio de la acción directa de "habeas data".',
       correct: true,
-      explanation: 'Correcto. El Artículo 20 establece que frente a la negativa, demora o silencio, el sujeto legitimado dispone de la acción directa de "habeas data", la cual a nivel nacional es exenta de gastos[cite: 64].'
+      explanation: 'Correcto. El Artículo 20 establece que frente a la negativa, demora o silencio, el sujeto legitimado dispone de la acción directa de "habeas data", la cual a nivel nacional es exenta de gastos.'
     }
   ],
   legalRefs: [
-    'Ley 26.529: Derechos del paciente y exenciones de asistencia (Art. 2)[cite: 59, 60].',
-    'Ley 26.529: Manejo de Información Sanitaria (Art. 4)[cite: 60].',
-    'Ley 26.529: Consentimiento Informado, Instrumentación y Excepciones (Arts. 7, 9, 11)[cite: 61, 62].',
-    'Ley 26.529: Historia Clínica, titularidad, inviolabilidad y plazos (Arts. 13, 14, 16, 18, 19, 20)[cite: 62, 63, 64].'
+    'Ley 26.529: Derechos del paciente y exenciones de asistencia (Art. 2).',
+    'Ley 26.529: Manejo de Información Sanitaria (Art. 4).',
+    'Ley 26.529: Consentimiento Informado, Instrumentación y Excepciones (Arts. 7, 9, 11).',
+    'Ley 26.529: Historia Clínica, titularidad, inviolabilidad y plazos (Arts. 13, 14, 16, 18, 19, 20).'
+  ]
+};
+
+// ==========================================
+// UNIDAD 5
+// ==========================================
+const unit5 = {
+  title: 'Ley de Confidencialidad (Ley 24.766)',
+  intro: 'Examen de nivel universitario. Evaluá la legalidad de los siguientes escenarios vinculados al secreto industrial, registro de productos y usos comerciales honestos en el ámbito farmacéutico.',
+  items: [
+    {
+      text: 'Un laboratorio intenta resguardar legalmente como información confidencial una fórmula que es fácilmente accesible para los profesionales especializados del sector, argumentando que tiene gran valor económico.',
+      correct: false,
+      explanation: 'Falso. El Artículo 1° exige que la información sea secreta, es decir, que no sea generalmente conocida ni fácilmente accesible para personas en los círculos que normalmente la utilizan.'
+    },
+    {
+      text: 'Un laboratorio de la competencia adquiere la fórmula de un producto sin el consentimiento de su titular debido a una negligencia grave, aunque ignoraba que dicha adquisición implicaba una práctica deshonesta.',
+      correct: false,
+      explanation: 'Infracción (No cumple). El Artículo 1° considera contrario a los usos comerciales honestos la adquisición por terceros que supieran o no, por negligencia grave, que la adquisición implicaba tales prácticas.'
+    },
+    {
+      text: 'Un empleado revela un proceso de elaboración que obtuvo en su trabajo. Para que se considere una infracción a la Ley, es requisito indispensable que previamente se le haya advertido sobre el carácter confidencial de dicha información.',
+      correct: true,
+      explanation: 'Correcto. El Artículo 3° establece la obligación de abstenerse de revelar la información a toda persona que haya tenido acceso "y sobre cuya confidencialidad se los haya prevenido".'
+    },
+    {
+      text: 'Al solicitar el registro de una nueva entidad química sin registro previo en ningún país, la información sobre eficacia e inocuidad está protegida contra su divulgación si requirió un esfuerzo técnico y económico significativo.',
+      correct: true,
+      explanation: 'Correcto. El Artículo 4° protege esta información contra el uso comercial deshonesto y prohíbe explícitamente su divulgación.'
+    },
+    {
+      text: 'El Ministerio de Salud recibe una solicitud de inscripción para un producto farmacéutico similar a uno ya autorizado en un país del Anexo I. El organismo dispone legalmente de un plazo de 180 días corridos para expedirse.',
+      correct: false,
+      explanation: 'Falso. El Artículo 5° establece taxativamente que el Ministerio de Salud tendrá un plazo de 120 días corridos para expedirse, contados desde la solicitud.'
+    },
+    {
+      text: 'Un laboratorio nacional utiliza una invención protegida por una patente vigente con fines netamente experimentales para reunir información y solicitar la comercialización una vez que dicha patente expire.',
+      correct: true,
+      explanation: 'Correcto. El Artículo 8° autoriza a cualquier tercero a utilizar la invención antes del vencimiento con fines experimentales para reunir la información requerida para su futura aprobación.'
+    },
+    {
+      text: 'La información confidencial presentada ante la autoridad sanitaria mantiene su protección legal aun si el laboratorio titular decide publicar una parte de dichos datos en una revista científica de dominio público.',
+      correct: false,
+      explanation: 'Falso. El Artículo 9° dispone que no estará protegida la información que hubiera caído en el dominio público por la publicación o presentación en medios científicos de todos o partes de los datos.'
+    },
+    {
+      text: 'La autoridad sanitaria se encuentra facultada para publicar información confidencial sobre un medicamento nuevo si dicha publicación es estrictamente necesaria para proteger a la población.',
+      correct: true,
+      explanation: 'Correcto. El Artículo 10° exceptúa de la protección a la información cuya publicación sea necesaria para proteger al público.'
+    },
+    {
+      text: 'La protección otorgada por la Ley de Confidencialidad a un proceso de elaboración farmacéutica le confiere a su desarrollador derechos exclusivos de monopolio, impidiendo que terceros lo desarrollen de forma independiente.',
+      correct: false,
+      explanation: 'Falso. El Artículo 11° aclara expresamente que la protección conferida por esta ley no crea derechos exclusivos a favor de quien posea o hubiera desarrollado la información.'
+    },
+    {
+      text: 'Ante la sustracción de documentación técnica por parte de un ex empleado, el laboratorio afectado interpone medidas cautelares para hacer cesar la conducta ilícita e inicia acciones para solicitar reparación económica.',
+      correct: true,
+      explanation: 'Correcto. El Artículo 11° habilita a solicitar medidas cautelares para el cese de conductas ilícitas y a ejercer acciones civiles para obtener la reparación del perjuicio sufrido.'
+    },
+    {
+      text: 'Un funcionario de la autoridad sanitaria que revele indebidamente el expediente técnico de un fármaco solo será sancionado con una multa y medidas disciplinarias internas, sin responsabilidad penal.',
+      correct: false,
+      explanation: 'Falso. Los Artículos 12° y 13° determinan que los funcionarios incurrirán en responsabilidad penal (violación de secretos), sumado a la pena de exoneración y multa.'
+    },
+    {
+      text: 'Para registrar un producto farmacéutico importado desde Brasil (país del Anexo II), la ley exige que el medicamento ya se encuentre comercializado en dicho país de origen previo a la solicitud local.',
+      correct: true,
+      explanation: 'Correcto. El Artículo 5°, inciso e, exige un certificado de la autoridad sanitaria de origen y que, previo a la solicitud, el producto esté comercializado en el país de origen.'
+    }
+  ],
+  legalRefs: [
+    'Ley 24.766: Condiciones de protección y usos deshonestos (Arts. 1 y 3).',
+    'Ley 24.766: Aprobación de productos y entidades químicas nuevas (Arts. 4 y 5).',
+    'Ley 24.766: Excepciones por patentes, dominio público y salud pública (Arts. 8, 9 y 10).',
+    'Ley 24.766: Acciones legales y responsabilidad de funcionarios (Arts. 11, 12 y 13).'
+  ]
+};
+
+// ==========================================
+// UNIDAD 6 (NUEVA)
+// ==========================================
+const unit6 = {
+  title: 'Buenas Prácticas de Distribución (Disp. BPD ANMAT)',
+  intro: 'Examen de nivel universitario. Evaluá la legalidad de los siguientes escenarios logísticos y operativos según las exigencias de la Disposición de Buenas Prácticas de Distribución de Medicamentos de la ANMAT.',
+  items: [
+    {
+      text: 'Una empresa distribuidora mayorista de medicamentos decide abrir un anexo en su establecimiento para realizar la dispensa directa al público de venta libre.',
+      correct: false,
+      explanation: 'Falso. El alcance de las Buenas Prácticas de Distribución abarca almacenamiento, distribución y transporte, pero excluye expresamente la dispensa al público[cite: 28, 50].'
+    },
+    {
+      text: 'El farmacéutico director técnico de una distribuidora toma licencia por vacaciones y delega tanto sus funciones operativas como sus responsabilidades legales al gerente general del depósito.',
+      correct: false,
+      explanation: 'Falso. La normativa establece que el director técnico podrá delegar funciones, pero no responsabilidades[cite: 34].'
+    },
+    {
+      text: 'Una farmacia devuelve un lote intacto y no vencido al distribuidor. Al constatar visualmente el buen estado, un operario de depósito lo reingresa de inmediato al stock distribuible para cubrir un pedido pendiente.',
+      correct: false,
+      explanation: 'Falso. Todo producto devuelto debe segregarse[cite: 45]. Solo puede reingresar al stock distribuible tras ser evaluado, confirmado y aprobado su reingreso por el director técnico de la firma[cite: 45].'
+    },
+    {
+      text: 'El distribuidor recibe la devolución de un medicamento que previamente fue informado al Sistema Nacional de Trazabilidad (SNT) como "dispensado a paciente". Como la caja está cerrada, el DT aprueba su reingreso al stock.',
+      correct: false,
+      explanation: 'Falso. La norma prohíbe estrictamente que los productos informados al SNT como dispensados a paciente sean reingresados al stock de productos distribuibles[cite: 43].'
+    },
+    {
+      text: 'Para maximizar el espacio en el depósito climatizado, el distribuidor almacena cajas pesadas de soluciones parenterales directamente sobre el piso y apiladas contra las paredes exteriores.',
+      correct: false,
+      explanation: 'Falso. El punto 6.3.5 indica explícitamente que los productos no deben estar en contacto con el piso y/o paredes, y deben mantenerse a una distancia adecuada de los techos[cite: 41].'
+    },
+    {
+      text: 'El depósito cuenta con cámaras frigoríficas conectadas a la red eléctrica local, pero carece de un generador alternativo, asumiendo el riesgo dado que los cortes de energía son muy infrecuentes en esa zona.',
+      correct: false,
+      explanation: 'Falso. Los equipos frigoríficos destinados a cadena de frío deben poseer obligatoriamente una red alternativa de suministro energético (generador) para atender eventuales fallas de energía[cite: 39].'
+    },
+    {
+      text: 'Durante la jornada laboral, un operario anota la recepción de mercadería en un borrador de papel y, al finalizar la semana, ingresa todos los datos juntos al sistema informático de calidad.',
+      correct: false,
+      explanation: 'Falso. El sistema de calidad debe asegurar que los registros se efectúen al momento de realizar las actividades (registros en tiempo real)[cite: 30, 34].'
+    },
+    {
+      text: 'Al identificar un lote de medicamentos con sospecha de falsificación durante el ingreso, el personal los segrega inmediatamente en un área identificada y el DT notifica a la Autoridad Sanitaria.',
+      correct: true,
+      explanation: 'Correcto. Frente a sospechas de falsificación, los medicamentos deben ser separados e identificados, y el director técnico debe notificar inmediatamente a la Autoridad Sanitaria[cite: 46].'
+    },
+    {
+      text: 'El distribuidor contrata a una empresa transportista tercerizada. Aunque se firma un contrato, el distribuidor asume la obligación de informar al transportista sobre las condiciones de temperatura requeridas.',
+      correct: true,
+      explanation: 'Correcto. En actividades tercerizadas de transporte, el distribuidor es responsable de informar a los transportistas sobre las condiciones requeridas para los productos[cite: 48].'
+    },
+    {
+      text: 'Un medicamento de cadena de frío queda retenido temporalmente en un depósito de trasbordo (cross-docking). Dicho depósito aloja los medicamentos en un equipo frigorífico exclusivo, con monitoreo y registro constante de temperatura calibrado.',
+      correct: true,
+      explanation: 'Correcto. La normativa exige que en depósitos de trasbordo, los productos de cadena de frío deben utilizar un equipo frigorífico de uso exclusivo, con monitoreo constante y calibrado[cite: 49].'
+    },
+    {
+      text: 'Antes de habilitar una nueva área de almacenamiento, la empresa realiza un mapeo térmico inicial en condiciones representativas para detectar los puntos críticos y ubicar allí los registradores de temperatura.',
+      correct: true,
+      explanation: 'Correcto. Se debe elaborar un registro de la temperatura inicial para determinar las zonas de mayor fluctuación y puntos críticos, ubicando los equipos en función de dichos registros[cite: 38].'
+    },
+    {
+      text: 'El distribuidor decide suspender su programa interno de auto-inspecciones, reemplazándolo exclusivamente por una auditoría externa anual llevada a cabo por una consultora internacional especializada.',
+      correct: false,
+      explanation: 'Falso. Las BPD establecen que las auditorías realizadas por expertos externos pueden ser útiles, pero en ningún caso podrán reemplazar las auto-inspecciones impartidas por la propia empresa[cite: 47].'
+    }
+  ],
+  legalRefs: [
+    'BPD ANMAT (Alcance y Sistema de Calidad): Puntos 3 y 1.2[cite: 28, 30].',
+    'BPD ANMAT (Dirección Técnica, Instalaciones y Cadena de frío): Puntos 4.3, 5.2 a 5.5[cite: 34, 38, 39].',
+    'BPD ANMAT (Operaciones, SNT y Devoluciones): Puntos 6.3, 6.8 y 8.2[cite: 41, 43, 45].',
+    'BPD ANMAT (Auto-inspecciones y Transporte): Puntos 9.2 y 10.2 a 10.3[cite: 47, 48, 49].'
   ]
 };
 
@@ -305,7 +457,9 @@ const unitsData = {
   1: unit1,
   2: unit2,
   3: unit3,
-  4: unit4
+  4: unit4,
+  5: unit5,
+  6: unit6
 };
 
 let currentUnit = 1;
