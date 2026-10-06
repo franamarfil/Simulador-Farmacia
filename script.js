@@ -451,6 +451,143 @@ const unit6 = {
 };
 
 // ==========================================
+// UNIDAD 7
+// ==========================================
+const unit7 = {
+  title: 'Buenas Prácticas de Fabricación (Disp. 4159 - Parte A, Cap. 1 al 10)',
+  intro: 'Examen de nivel universitario. Evaluá la legalidad y el cumplimiento de los siguientes escenarios de producción, control de calidad, almacenamiento, documentación y gestión en la industria farmacéutica según la Disposición ANMAT 4159 (Páginas 1 a 54).',
+  items: [
+    {
+      text: 'Una planta farmacéutica decide realizar la revisión periódica de la calidad de sus productos cada dos años en lugar de anualmente para optimizar recursos administrativos.',
+      correct: false,
+      explanation: 'Falso. Las revisiones de calidad deben hacerse y documentarse por lo general anualmente para verificar la consistencia del proceso y destacar cualquier tendencia[cite: 184].'
+    },
+    {
+      text: 'En el organigrama de la empresa, la misma persona ejerce simultáneamente las responsabilidades de jefe de producción y de jefe de control de calidad para agilizar los procesos de liberación.',
+      correct: false,
+      explanation: 'Falso. Los responsables de producción, control de calidad y garantía de calidad deben ser totalmente independientes entre sí[cite: 186].'
+    },
+    {
+      text: 'Debido a que los límites de residuos relevantes de un principio activo altamente sensibilizante no pueden determinarse satisfactoriamente por un método analítico validado, el laboratorio fabrica el producto en instalaciones dedicadas.',
+      correct: true,
+      explanation: 'Correcto. Se requieren instalaciones dedicadas cuando los límites de residuos relevantes no pueden determinarse por un método analítico validado, o el riesgo no puede controlarse adecuadamente[cite: 190, 191].'
+    },
+    {
+      text: 'Un operario comete un error al registrar un dato numérico en una guía de fabricación en papel, por lo que utiliza corrector líquido (liquid paper) por encima y escribe el valor correcto.',
+      correct: false,
+      explanation: 'Falso. Los documentos no deben estar escritos a mano de forma incorrecta y cualquier modificación debe firmarse y fecharse sin impedir la lectura del dato inicial[cite: 196].'
+    },
+    {
+      text: 'El establecimiento procede a destruir los registros completos de fabricación de un lote específico transcurridos exactamente seis meses desde su fecha de caducidad.',
+      correct: false,
+      explanation: 'Falso. La documentación de un lote debe conservarse hasta, al menos, un año después de la fecha de caducidad del lote[cite: 196].'
+    },
+    {
+      text: 'En las zonas de almacenamiento, los operarios rotan las existencias aplicando estrictamente la regla "primero vence, primero sale" (FEFO).',
+      correct: true,
+      explanation: 'Correcto. Todos los materiales y productos deben almacenarse ordenadamente para permitir la separación de lotes y la rotación de las existencias mediante la regla FEFO[cite: 203].'
+    },
+    {
+      text: 'Para aprovechar sobrantes, el jefe de producción decide incorporar un lote anterior en un lote nuevo en una fase determinada. Lo hace como medida excepcional preautorizada, tras una evaluación de riesgos que incluye el efecto en la caducidad.',
+      correct: true,
+      explanation: 'Correcto. La recuperación debe ser una medida excepcional autorizada de antemano, siguiendo un procedimiento definido tras evaluar los riesgos, incluyendo su efecto en la caducidad[cite: 211, 212].'
+    },
+    {
+      text: 'Una vez comercializado un medicamento, el laboratorio implementa un programa continuo de estudios de estabilidad en curso para comprobar que el producto cumple con las especificaciones durante su período de validez.',
+      correct: true,
+      explanation: 'Correcto. El propósito de los estudios de estabilidad en curso (on-going) es controlar el producto durante su período de validez bajo las condiciones de almacenamiento establecidas[cite: 216].'
+    },
+    {
+      text: 'Un laboratorio contratante delega el envasado de un producto a un agente contratado. Por un exceso de demanda, el contratado decide subcontratar a una tercera empresa una parte del trabajo sin consultar al contratante original.',
+      correct: false,
+      explanation: 'Falso. El agente contratado no subcontratará a un tercero ninguna parte del trabajo que le haya sido confiado por contrato sin previa evaluación y aprobación[cite: 220].'
+    },
+    {
+      text: 'Al confirmarse un defecto de calidad en un lote de comprimidos, el director técnico ordena evaluar de inmediato si es necesario comprobar otros lotes que puedan contener partes del lote defectuoso.',
+      correct: true,
+      explanation: 'Correcto. Si se descubre o sospecha un defecto de calidad, habrá que considerar si es necesario comprobar otros lotes, particularmente aquellos que contengan partes del lote defectuoso[cite: 222].'
+    }
+  ],
+  legalRefs: [
+    'Disp. ANMAT 4159 (Cap. 1 y 2): Sistema de Calidad Farmacéutico, Revisión anual y Personal clave[cite: 180, 184, 186].',
+    'Disp. ANMAT 4159 (Cap. 3 y 4): Instalaciones dedicadas, Control de áreas y Buenas prácticas de documentación[cite: 180, 190, 196].',
+    'Disp. ANMAT 4159 (Cap. 5 y 6): Producción, Rotación FEFO, Recuperación y Estudios de estabilidad en curso[cite: 180, 203, 211, 216].',
+    'Disp. ANMAT 4159 (Cap. 7 y 8): Actividades tercerizadas, Reclamos y Defectos de calidad[cite: 180, 220, 222].'
+  ]
+};
+
+// ==========================================
+// UNIDAD 8
+// ==========================================
+const unit8 = {
+  title: 'Buenas Prácticas de Farmacovigilancia (Disp. ANMAT 5358/12)',
+  intro: 'Examen de nivel universitario. Evaluá la legalidad y el cumplimiento normativo de los siguientes escenarios vinculados a la farmacovigilancia, gestión de riesgos, informes periódicos y eventos en vacunación según la Disposición ANMAT 5358/12.',
+  items: [
+    {
+      text: 'Ante la notificación de una sospecha de reacción adversa seria que resultó en la muerte de un paciente, el Titular de Autorización de Registro y Comercialización (TARC) cuenta con un plazo de hasta 15 días corridos para notificarlo al Departamento de Farmacovigilancia de la ANMAT.',
+      correct: false,
+      explanation: 'Falso. Las sospechas de reacciones adversas serias deben notificarse dentro de los 15 días corridos, pero en caso de muerte o amenaza de vida, el plazo se reduce a 7 días corridos desde la recepción de la información[cite: 315].'
+    },
+    {
+      text: 'Un laboratorio detecta una señal de seguridad relevante en uno de sus productos y decide difundir un comunicado preventivo a los profesionales de la salud, notificando a la ANMAT en forma simultánea al momento de su publicación.',
+      correct: false,
+      explanation: 'Falso. El TARC debe abstenerse de comunicar cuestiones de farmacovigilancia al público y profesionales sin haberlo comunicado previamente a la ANMAT con al menos 24 horas de antelación[cite: 316].'
+    },
+    {
+      text: 'Una mujer embarazada es expuesta a una especialidad medicinal, pero el hecho no genera ningún tipo de evento adverso ni anomalía. El laboratorio decide no reportarlo por tratarse de un consumo sin consecuencias clínicas.',
+      correct: false,
+      explanation: 'Falso. Es obligatorio notificar al Departamento de Farmacovigilancia de la ANMAT cuando se detecte que una mujer embarazada es expuesta a un medicamento, aun cuando no se produzca un evento adverso[cite: 315].'
+    },
+    {
+      text: 'Para un medicamento que lleva un año en el mercado argentino, el laboratorio presenta su Informe Periódico de Actualización de Seguridad (IPAS) con una frecuencia anual.',
+      correct: false,
+      explanation: 'Falso. La periodicidad estándar exige presentar los IPAS semestralmente durante los dos primeros años tras el inicio de la comercialización[cite: 320].'
+    },
+    {
+      text: 'El Responsable de Farmacovigilancia (RFV) debidamente comunicado ante la autoridad sanitaria actúa como el único interlocutor válido en términos de farmacovigilancia ante el Departamento de Farmacovigilancia de la ANMAT[cite: 316].',
+      correct: true,
+      explanation: 'Correcto. El RFV es el único interlocutor válido ante la ANMAT y debe proporcionar su nombre, teléfonos y dirección electrónica de contacto[cite: 316].'
+    },
+    {
+      text: 'Un ESAVI (Evento Supuestamente Atribuible a la Vacunación e Inmunización) provocado porque el vacunador aplicó la vacuna por una vía de administración diferente a la establecida se clasifica como un evento relacionado con un error programático (operativo del programa), el cual resulta prevenible[cite: 327].',
+      correct: true,
+      explanation: 'Correcto. Los errores en la preparación, manejo o administración (como usar una vía incorrecta o inyecciones no estériles) constituyen errores programáticos prevenibles[cite: 327].'
+    },
+    {
+      text: 'Con respecto a la vigilancia de vacunas, el TARC debe enviar al Sistema Nacional de Farmacovigilancia de la ANMAT la información sobre eventos adversos serios dentro de las 72 horas desde su conocimiento[cite: 329].',
+      correct: true,
+      explanation: 'Correcto. Los eventos serios de vacunas deben ser enviados al Sistema Nacional de Farmacovigilancia en un plazo de 72 horas desde su conocimiento por parte del TARC[cite: 329].'
+    },
+    {
+      text: 'El Plan de Gestión de Riesgo (PGR) se divide en dos partes: la Parte I, que incluye las especificaciones de seguridad y el plan de farmacovigilancia, y la Parte II, que evalúa la necesidad de actividades de minimización de riesgos[cite: 323].',
+      correct: true,
+      explanation: 'Correcto. La estructura del PGR formaliza en su Parte I las especificaciones de seguridad y el plan de farmacovigilancia, y en su Parte II la evaluación y planes de minimización de riesgos[cite: 323].'
+    },
+    {
+      text: 'Para que una notificación de sospecha de reacción adversa sea aceptada como reporte válido con la mínima información indispensable, se requiere únicamente el nombre de la droga y el resultado final del paciente.',
+      correct: false,
+      explanation: 'Falso. La información mínima indispensable consiste en: fecha de comienzo del evento adverso, fecha de comienzo de administración de la medicación sospechosa, edad del paciente, descripción completa del evento y nombre de la droga (DCA y marca)[cite: 315].'
+    },
+    {
+      text: 'Las notificaciones de reportes no serios de reacciones adversas deben ser remitidas por los laboratorios al Departamento de Farmacovigilancia de la ANMAT por vía electrónica de manera anual.',
+      correct: false,
+      explanation: 'Falso. Las notificaciones de reportes no serios deben enviarse por vía electrónica de manera bimestral utilizando el formulario correspondiente[cite: 315].'
+    }
+  ],
+  legalRefs: [
+    'Disp. ANMAT 5358/12 (Cap. 1): Responsabilidades del TARC, plazos de notificación (7 días para muertes, 15 días para serios), exposiciones en embarazos y prohibición de comunicación previa de 24 horas[cite: 315, 316].',
+    'Disp. ANMAT 5358/12 (Cap. 1.2 y 1.3): Funciones del Responsable de Farmacovigilancia (RFV) como único interlocutor y organización del área[cite: 316, 317].',
+    'Disp. ANMAT 5358/12 (Cap. 2): Informes Periódicos de Actualización de Seguridad (IPAS) y su periodicidad estándar semestral/anual/trianual[cite: 320].',
+    'Disp. ANMAT 5358/12 (Cap. 3): Planes de Gestión de Riesgo (PGR), Partes I y II, y especificaciones de seguridad[cite: 323].',
+    'Disp. ANMAT 5358/12 (Cap. 4): Farmacovigilancia en vacunas, clasificación de ESAVI (errores programáticos, eventos relacionados/coincidentes) y plazos de reporte serio (72 horas)[cite: 327, 328, 329].'
+  ]
+};
+
+// ==========================================
+// CONTROLADOR CENTRAL
+// ==========================================
+
+// ==========================================
 // CONTROLADOR CENTRAL
 // ==========================================
 const unitsData = {
@@ -459,7 +596,9 @@ const unitsData = {
   3: unit3,
   4: unit4,
   5: unit5,
-  6: unit6
+  6: unit6,
+  7: unit7,
+  8: unit8
 };
 
 let currentUnit = 1;
