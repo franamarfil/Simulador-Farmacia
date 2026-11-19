@@ -1,4 +1,4 @@
-const TOTAL_UNITS = 11;
+const TOTAL_UNITS = 8;
 const PDF_FOLDER = 'pdf/';
 
 // ==========================================
@@ -758,15 +758,6 @@ function buildUnitHtml(unitNum){
     + '<button class="reset-btn" id="resetBtn">Reiniciar ejercicio</button>';
 }
 
-function buildPlaceholderHtml(n){
-  return '<p class="unit-label">Unidad ' + n + '</p>'
-    + '<h2 class="unit-title">Contenido en preparación</h2>'
-    + '<div class="placeholder">'
-    + '<p>Todavía no se cargó el escenario de esta unidad.</p>'
-    + '<p>Compartí el tema del programa que corresponde a la Unidad ' + n + ' y se puede armar un ejercicio con el mismo formato que la Unidad 1.</p>'
-    + '</div>';
-}
-
 function attachUnitListeners(){
   document.querySelectorAll('.item-actions button').forEach(function(btn){
     btn.addEventListener('click', function(e){
@@ -790,8 +781,6 @@ function renderContent(){
   if(unitsData[currentUnit]){
     content.innerHTML = buildUnitHtml(currentUnit);
     attachUnitListeners();
-  } else {
-    content.innerHTML = buildPlaceholderHtml(currentUnit);
   }
 }
 
