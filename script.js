@@ -1,4 +1,5 @@
 const TOTAL_UNITS = 11;
+const PDF_FOLDER = 'pdf/';
 
 // ==========================================
 // UNIDAD 1
@@ -69,6 +70,12 @@ const unit1 = {
     'Ley 19.303 y disposiciones de la ANMAT: control de estupefacientes y psicotrópicos.',
     'Ley 16.463 y disposiciones de la ANMAT: registro, condición de venta y publicidad de medicamentos.',
     'Incumbencias profesionales del farmacéutico: alcance del título, sin facultades de diagnóstico ni prescripción médica.'
+  ],
+  reviewPdfs: [
+    {
+      label: 'PDF Unidad 1',
+      file: 'unidad1.pdf'
+    }
   ]
 };
 
@@ -143,6 +150,12 @@ const unit2 = {
   legalRefs: [
     'Ley 17.818: Régimen legal de Estupefacientes.',
     'Ley 19.303: Régimen legal de Psicotrópicos.'
+  ],
+  reviewPdfs: [
+    {
+      label: 'PDF Unidad 2',
+      file: 'unidad2.pdf'
+    }
   ]
 };
 
@@ -219,6 +232,12 @@ const unit3 = {
     'Ley 17.818: Cap. IV y V (Registros y Enajenación, arts. 13 y 14).',
     'Ley 17.818: Cap. VI (Despacho al público, art. 16).',
     'Ley 17.818: Cap. IX y X (Prescripción y Procedimiento, arts. 26 y 28).'
+  ],
+  reviewPdfs: [
+    {
+      label: 'PDF Unidad 3',
+      file: 'unidad3.pdf'
+    }
   ]
 };
 
@@ -295,6 +314,12 @@ const unit4 = {
     'Ley 26.529: Manejo de Información Sanitaria (Art. 4).',
     'Ley 26.529: Consentimiento Informado, Instrumentación y Excepciones (Arts. 7, 9, 11).',
     'Ley 26.529: Historia Clínica, titularidad, inviolabilidad y plazos (Arts. 13, 14, 16, 18, 19, 20).'
+  ],
+  reviewPdfs: [
+    {
+      label: 'PDF Unidad 4',
+      file: 'unidad4.pdf'
+    }
   ]
 };
 
@@ -371,11 +396,17 @@ const unit5 = {
     'Ley 24.766: Aprobación de productos y entidades químicas nuevas (Arts. 4 y 5).',
     'Ley 24.766: Excepciones por patentes, dominio público y salud pública (Arts. 8, 9 y 10).',
     'Ley 24.766: Acciones legales y responsabilidad de funcionarios (Arts. 11, 12 y 13).'
+  ],
+  reviewPdfs: [
+    {
+      label: 'PDF Unidad 5',
+      file: 'unidad5.PDF'
+    }
   ]
 };
 
 // ==========================================
-// UNIDAD 6 (NUEVA)
+// UNIDAD 6
 // ==========================================
 const unit6 = {
   title: 'Buenas Prácticas de Distribución (Disp. BPD ANMAT)',
@@ -384,69 +415,75 @@ const unit6 = {
     {
       text: 'Una empresa distribuidora mayorista de medicamentos decide abrir un anexo en su establecimiento para realizar la dispensa directa al público de venta libre.',
       correct: false,
-      explanation: 'Falso. El alcance de las Buenas Prácticas de Distribución abarca almacenamiento, distribución y transporte, pero excluye expresamente la dispensa al público[cite: 28, 50].'
+      explanation: 'Falso. El alcance de las Buenas Prácticas de Distribución abarca almacenamiento, distribución y transporte, pero excluye expresamente la dispensa al público.'
     },
     {
       text: 'El farmacéutico director técnico de una distribuidora toma licencia por vacaciones y delega tanto sus funciones operativas como sus responsabilidades legales al gerente general del depósito.',
       correct: false,
-      explanation: 'Falso. La normativa establece que el director técnico podrá delegar funciones, pero no responsabilidades[cite: 34].'
+      explanation: 'Falso. La normativa establece que el director técnico podrá delegar funciones, pero no responsabilidades.'
     },
     {
       text: 'Una farmacia devuelve un lote intacto y no vencido al distribuidor. Al constatar visualmente el buen estado, un operario de depósito lo reingresa de inmediato al stock distribuible para cubrir un pedido pendiente.',
       correct: false,
-      explanation: 'Falso. Todo producto devuelto debe segregarse[cite: 45]. Solo puede reingresar al stock distribuible tras ser evaluado, confirmado y aprobado su reingreso por el director técnico de la firma[cite: 45].'
+      explanation: 'Falso. Todo producto devuelto debe segregarse. Solo puede reingresar al stock distribuible tras ser evaluado, confirmado y aprobado su reingreso por el director técnico de la firma.'
     },
     {
       text: 'El distribuidor recibe la devolución de un medicamento que previamente fue informado al Sistema Nacional de Trazabilidad (SNT) como "dispensado a paciente". Como la caja está cerrada, el DT aprueba su reingreso al stock.',
       correct: false,
-      explanation: 'Falso. La norma prohíbe estrictamente que los productos informados al SNT como dispensados a paciente sean reingresados al stock de productos distribuibles[cite: 43].'
+      explanation: 'Falso. La norma prohíbe estrictamente que los productos informados al SNT como dispensados a paciente sean reingresados al stock de productos distribuibles.'
     },
     {
       text: 'Para maximizar el espacio en el depósito climatizado, el distribuidor almacena cajas pesadas de soluciones parenterales directamente sobre el piso y apiladas contra las paredes exteriores.',
       correct: false,
-      explanation: 'Falso. El punto 6.3.5 indica explícitamente que los productos no deben estar en contacto con el piso y/o paredes, y deben mantenerse a una distancia adecuada de los techos[cite: 41].'
+      explanation: 'Falso. El punto 6.3.5 indica explícitamente que los productos no deben estar en contacto con el piso y/o paredes, y deben mantenerse a una distancia adecuada de los techos.'
     },
     {
       text: 'El depósito cuenta con cámaras frigoríficas conectadas a la red eléctrica local, pero carece de un generador alternativo, asumiendo el riesgo dado que los cortes de energía son muy infrecuentes en esa zona.',
       correct: false,
-      explanation: 'Falso. Los equipos frigoríficos destinados a cadena de frío deben poseer obligatoriamente una red alternativa de suministro energético (generador) para atender eventuales fallas de energía[cite: 39].'
+      explanation: 'Falso. Los equipos frigoríficos destinados a cadena de frío deben poseer obligatoriamente una red alternativa de suministro energético (generador) para atender eventuales fallas de energía.'
     },
     {
       text: 'Durante la jornada laboral, un operario anota la recepción de mercadería en un borrador de papel y, al finalizar la semana, ingresa todos los datos juntos al sistema informático de calidad.',
       correct: false,
-      explanation: 'Falso. El sistema de calidad debe asegurar que los registros se efectúen al momento de realizar las actividades (registros en tiempo real)[cite: 30, 34].'
+      explanation: 'Falso. El sistema de calidad debe asegurar que los registros se efectúen al momento de realizar las actividades (registros en tiempo real).'
     },
     {
       text: 'Al identificar un lote de medicamentos con sospecha de falsificación durante el ingreso, el personal los segrega inmediatamente en un área identificada y el DT notifica a la Autoridad Sanitaria.',
       correct: true,
-      explanation: 'Correcto. Frente a sospechas de falsificación, los medicamentos deben ser separados e identificados, y el director técnico debe notificar inmediatamente a la Autoridad Sanitaria[cite: 46].'
+      explanation: 'Correcto. Frente a sospechas de falsificación, los medicamentos deben ser separados e identificados, y el director técnico debe notificar inmediatamente a la Autoridad Sanitaria.'
     },
     {
       text: 'El distribuidor contrata a una empresa transportista tercerizada. Aunque se firma un contrato, el distribuidor asume la obligación de informar al transportista sobre las condiciones de temperatura requeridas.',
       correct: true,
-      explanation: 'Correcto. En actividades tercerizadas de transporte, el distribuidor es responsable de informar a los transportistas sobre las condiciones requeridas para los productos[cite: 48].'
+      explanation: 'Correcto. En actividades tercerizadas de transporte, el distribuidor es responsable de informar a los transportistas sobre las condiciones requeridas para los productos.'
     },
     {
       text: 'Un medicamento de cadena de frío queda retenido temporalmente en un depósito de trasbordo (cross-docking). Dicho depósito aloja los medicamentos en un equipo frigorífico exclusivo, con monitoreo y registro constante de temperatura calibrado.',
       correct: true,
-      explanation: 'Correcto. La normativa exige que en depósitos de trasbordo, los productos de cadena de frío deben utilizar un equipo frigorífico de uso exclusivo, con monitoreo constante y calibrado[cite: 49].'
+      explanation: 'Correcto. La normativa exige que en depósitos de trasbordo, los productos de cadena de frío deben utilizar un equipo frigorífico de uso exclusivo, con monitoreo constante y calibrado.'
     },
     {
       text: 'Antes de habilitar una nueva área de almacenamiento, la empresa realiza un mapeo térmico inicial en condiciones representativas para detectar los puntos críticos y ubicar allí los registradores de temperatura.',
       correct: true,
-      explanation: 'Correcto. Se debe elaborar un registro de la temperatura inicial para determinar las zonas de mayor fluctuación y puntos críticos, ubicando los equipos en función de dichos registros[cite: 38].'
+      explanation: 'Correcto. Se debe elaborar un registro de la temperatura inicial para determinar las zonas de mayor fluctuación y puntos críticos, ubicando los equipos en función de dichos registros.'
     },
     {
       text: 'El distribuidor decide suspender su programa interno de auto-inspecciones, reemplazándolo exclusivamente por una auditoría externa anual llevada a cabo por una consultora internacional especializada.',
       correct: false,
-      explanation: 'Falso. Las BPD establecen que las auditorías realizadas por expertos externos pueden ser útiles, pero en ningún caso podrán reemplazar las auto-inspecciones impartidas por la propia empresa[cite: 47].'
+      explanation: 'Falso. Las BPD establecen que las auditorías realizadas por expertos externos pueden ser útiles, pero en ningún caso podrán reemplazar las auto-inspecciones impartidas por la propia empresa.'
     }
   ],
   legalRefs: [
-    'BPD ANMAT (Alcance y Sistema de Calidad): Puntos 3 y 1.2[cite: 28, 30].',
-    'BPD ANMAT (Dirección Técnica, Instalaciones y Cadena de frío): Puntos 4.3, 5.2 a 5.5[cite: 34, 38, 39].',
-    'BPD ANMAT (Operaciones, SNT y Devoluciones): Puntos 6.3, 6.8 y 8.2[cite: 41, 43, 45].',
-    'BPD ANMAT (Auto-inspecciones y Transporte): Puntos 9.2 y 10.2 a 10.3[cite: 47, 48, 49].'
+    'BPD ANMAT (Alcance y Sistema de Calidad): Puntos 3 y 1.2.',
+    'BPD ANMAT (Dirección Técnica, Instalaciones y Cadena de frío): Puntos 4.3, 5.2 a 5.5.',
+    'BPD ANMAT (Operaciones, SNT y Devoluciones): Puntos 6.3, 6.8 y 8.2.',
+    'BPD ANMAT (Auto-inspecciones y Transporte): Puntos 9.2 y 10.2 a 10.3.'
+  ],
+  reviewPdfs: [
+    {
+      label: 'PDF Unidad 6',
+      file: 'unidad6.pdf'
+    }
   ]
 };
 
@@ -460,59 +497,65 @@ const unit7 = {
     {
       text: 'Una planta farmacéutica decide realizar la revisión periódica de la calidad de sus productos cada dos años en lugar de anualmente para optimizar recursos administrativos.',
       correct: false,
-      explanation: 'Falso. Las revisiones de calidad deben hacerse y documentarse por lo general anualmente para verificar la consistencia del proceso y destacar cualquier tendencia[cite: 184].'
+      explanation: 'Falso. Las revisiones de calidad deben hacerse y documentarse por lo general anualmente para verificar la consistencia del proceso y destacar cualquier tendencia.'
     },
     {
       text: 'En el organigrama de la empresa, la misma persona ejerce simultáneamente las responsabilidades de jefe de producción y de jefe de control de calidad para agilizar los procesos de liberación.',
       correct: false,
-      explanation: 'Falso. Los responsables de producción, control de calidad y garantía de calidad deben ser totalmente independientes entre sí[cite: 186].'
+      explanation: 'Falso. Los responsables de producción, control de calidad y garantía de calidad deben ser totalmente independientes entre sí.'
     },
     {
       text: 'Debido a que los límites de residuos relevantes de un principio activo altamente sensibilizante no pueden determinarse satisfactoriamente por un método analítico validado, el laboratorio fabrica el producto en instalaciones dedicadas.',
       correct: true,
-      explanation: 'Correcto. Se requieren instalaciones dedicadas cuando los límites de residuos relevantes no pueden determinarse por un método analítico validado, o el riesgo no puede controlarse adecuadamente[cite: 190, 191].'
+      explanation: 'Correcto. Se requieren instalaciones dedicadas cuando los límites de residuos relevantes no pueden determinarse por un método analítico validado, o el riesgo no puede controlarse adecuadamente.'
     },
     {
       text: 'Un operario comete un error al registrar un dato numérico en una guía de fabricación en papel, por lo que utiliza corrector líquido (liquid paper) por encima y escribe el valor correcto.',
       correct: false,
-      explanation: 'Falso. Los documentos no deben estar escritos a mano de forma incorrecta y cualquier modificación debe firmarse y fecharse sin impedir la lectura del dato inicial[cite: 196].'
+      explanation: 'Falso. Los documentos no deben estar escritos a mano de forma incorrecta y cualquier modificación debe firmarse y fecharse sin impedir la lectura del dato inicial.'
     },
     {
       text: 'El establecimiento procede a destruir los registros completos de fabricación de un lote específico transcurridos exactamente seis meses desde su fecha de caducidad.',
       correct: false,
-      explanation: 'Falso. La documentación de un lote debe conservarse hasta, al menos, un año después de la fecha de caducidad del lote[cite: 196].'
+      explanation: 'Falso. La documentación de un lote debe conservarse hasta, al menos, un año después de la fecha de caducidad del lote.'
     },
     {
       text: 'En las zonas de almacenamiento, los operarios rotan las existencias aplicando estrictamente la regla "primero vence, primero sale" (FEFO).',
       correct: true,
-      explanation: 'Correcto. Todos los materiales y productos deben almacenarse ordenadamente para permitir la separación de lotes y la rotación de las existencias mediante la regla FEFO[cite: 203].'
+      explanation: 'Correcto. Todos los materiales y productos deben almacenarse ordenadamente para permitir la separación de lotes y la rotación de las existencias mediante la regla FEFO.'
     },
     {
       text: 'Para aprovechar sobrantes, el jefe de producción decide incorporar un lote anterior en un lote nuevo en una fase determinada. Lo hace como medida excepcional preautorizada, tras una evaluación de riesgos que incluye el efecto en la caducidad.',
       correct: true,
-      explanation: 'Correcto. La recuperación debe ser una medida excepcional autorizada de antemano, siguiendo un procedimiento definido tras evaluar los riesgos, incluyendo su efecto en la caducidad[cite: 211, 212].'
+      explanation: 'Correcto. La recuperación debe ser una medida excepcional autorizada de antemano, siguiendo un procedimiento definido tras evaluar los riesgos, incluyendo su efecto en la caducidad.'
     },
     {
       text: 'Una vez comercializado un medicamento, el laboratorio implementa un programa continuo de estudios de estabilidad en curso para comprobar que el producto cumple con las especificaciones durante su período de validez.',
       correct: true,
-      explanation: 'Correcto. El propósito de los estudios de estabilidad en curso (on-going) es controlar el producto durante su período de validez bajo las condiciones de almacenamiento establecidas[cite: 216].'
+      explanation: 'Correcto. El propósito de los estudios de estabilidad en curso (on-going) es controlar el producto durante su período de validez bajo las condiciones de almacenamiento establecidas.'
     },
     {
       text: 'Un laboratorio contratante delega el envasado de un producto a un agente contratado. Por un exceso de demanda, el contratado decide subcontratar a una tercera empresa una parte del trabajo sin consultar al contratante original.',
       correct: false,
-      explanation: 'Falso. El agente contratado no subcontratará a un tercero ninguna parte del trabajo que le haya sido confiado por contrato sin previa evaluación y aprobación[cite: 220].'
+      explanation: 'Falso. El agente contratado no subcontratará a un tercero ninguna parte del trabajo que le haya sido confiado por contrato sin previa evaluación y aprobación.'
     },
     {
       text: 'Al confirmarse un defecto de calidad en un lote de comprimidos, el director técnico ordena evaluar de inmediato si es necesario comprobar otros lotes que puedan contener partes del lote defectuoso.',
       correct: true,
-      explanation: 'Correcto. Si se descubre o sospecha un defecto de calidad, habrá que considerar si es necesario comprobar otros lotes, particularmente aquellos que contengan partes del lote defectuoso[cite: 222].'
+      explanation: 'Correcto. Si se descubre o sospecha un defecto de calidad, habrá que considerar si es necesario comprobar otros lotes, particularmente aquellos que contengan partes del lote defectuoso.'
     }
   ],
   legalRefs: [
-    'Disp. ANMAT 4159 (Cap. 1 y 2): Sistema de Calidad Farmacéutico, Revisión anual y Personal clave[cite: 180, 184, 186].',
-    'Disp. ANMAT 4159 (Cap. 3 y 4): Instalaciones dedicadas, Control de áreas y Buenas prácticas de documentación[cite: 180, 190, 196].',
-    'Disp. ANMAT 4159 (Cap. 5 y 6): Producción, Rotación FEFO, Recuperación y Estudios de estabilidad en curso[cite: 180, 203, 211, 216].',
-    'Disp. ANMAT 4159 (Cap. 7 y 8): Actividades tercerizadas, Reclamos y Defectos de calidad[cite: 180, 220, 222].'
+    'Disp. ANMAT 4159 (Cap. 1 y 2): Sistema de Calidad Farmacéutico, Revisión anual y Personal clave.',
+    'Disp. ANMAT 4159 (Cap. 3 y 4): Instalaciones dedicadas, Control de áreas y Buenas prácticas de documentación.',
+    'Disp. ANMAT 4159 (Cap. 5 y 6): Producción, Rotación FEFO, Recuperación y Estudios de estabilidad en curso.',
+    'Disp. ANMAT 4159 (Cap. 7 y 8): Actividades tercerizadas, Reclamos y Defectos de calidad.'
+  ],
+  reviewPdfs: [
+    {
+      label: 'PDF Unidad 7',
+      file: 'unidad7.pdf'
+    }
   ]
 };
 
@@ -526,66 +569,68 @@ const unit8 = {
     {
       text: 'Ante la notificación de una sospecha de reacción adversa seria que resultó en la muerte de un paciente, el Titular de Autorización de Registro y Comercialización (TARC) cuenta con un plazo de hasta 15 días corridos para notificarlo al Departamento de Farmacovigilancia de la ANMAT.',
       correct: false,
-      explanation: 'Falso. Las sospechas de reacciones adversas serias deben notificarse dentro de los 15 días corridos, pero en caso de muerte o amenaza de vida, el plazo se reduce a 7 días corridos desde la recepción de la información[cite: 315].'
+      explanation: 'Falso. Las sospechas de reacciones adversas serias deben notificarse dentro de los 15 días corridos, pero en caso de muerte o amenaza de vida, el plazo se reduce a 7 días corridos desde la recepción de la información.'
     },
     {
       text: 'Un laboratorio detecta una señal de seguridad relevante en uno de sus productos y decide difundir un comunicado preventivo a los profesionales de la salud, notificando a la ANMAT en forma simultánea al momento de su publicación.',
       correct: false,
-      explanation: 'Falso. El TARC debe abstenerse de comunicar cuestiones de farmacovigilancia al público y profesionales sin haberlo comunicado previamente a la ANMAT con al menos 24 horas de antelación[cite: 316].'
+      explanation: 'Falso. El TARC debe abstenerse de comunicar cuestiones de farmacovigilancia al público y profesionales sin haberlo comunicado previamente a la ANMAT con al menos 24 horas de antelación.'
     },
     {
       text: 'Una mujer embarazada es expuesta a una especialidad medicinal, pero el hecho no genera ningún tipo de evento adverso ni anomalía. El laboratorio decide no reportarlo por tratarse de un consumo sin consecuencias clínicas.',
       correct: false,
-      explanation: 'Falso. Es obligatorio notificar al Departamento de Farmacovigilancia de la ANMAT cuando se detecte que una mujer embarazada es expuesta a un medicamento, aun cuando no se produzca un evento adverso[cite: 315].'
+      explanation: 'Falso. Es obligatorio notificar al Departamento de Farmacovigilancia de la ANMAT cuando se detecte que una mujer embarazada es expuesta a un medicamento, aun cuando no se produzca un evento adverso.'
     },
     {
       text: 'Para un medicamento que lleva un año en el mercado argentino, el laboratorio presenta su Informe Periódico de Actualización de Seguridad (IPAS) con una frecuencia anual.',
       correct: false,
-      explanation: 'Falso. La periodicidad estándar exige presentar los IPAS semestralmente durante los dos primeros años tras el inicio de la comercialización[cite: 320].'
+      explanation: 'Falso. La periodicidad estándar exige presentar los IPAS semestralmente durante los dos primeros años tras el inicio de la comercialización.'
     },
     {
-      text: 'El Responsable de Farmacovigilancia (RFV) debidamente comunicado ante la autoridad sanitaria actúa como el único interlocutor válido en términos de farmacovigilancia ante el Departamento de Farmacovigilancia de la ANMAT[cite: 316].',
+      text: 'El Responsable de Farmacovigilancia (RFV) debidamente comunicado ante la autoridad sanitaria actúa como el único interlocutor válido en términos de farmacovigilancia ante el Departamento de Farmacovigilancia de la ANMAT.',
       correct: true,
-      explanation: 'Correcto. El RFV es el único interlocutor válido ante la ANMAT y debe proporcionar su nombre, teléfonos y dirección electrónica de contacto[cite: 316].'
+      explanation: 'Correcto. El RFV es el único interlocutor válido ante la ANMAT y debe proporcionar su nombre, teléfonos y dirección electrónica de contacto.'
     },
     {
-      text: 'Un ESAVI (Evento Supuestamente Atribuible a la Vacunación e Inmunización) provocado porque el vacunador aplicó la vacuna por una vía de administración diferente a la establecida se clasifica como un evento relacionado con un error programático (operativo del programa), el cual resulta prevenible[cite: 327].',
+      text: 'Un ESAVI (Evento Supuestamente Atribuible a la Vacunación e Inmunización) provocado porque el vacunador aplicó la vacuna por una vía de administración diferente a la establecida se clasifica como un evento relacionado con un error programático (operativo del programa), el cual resulta prevenible.',
       correct: true,
-      explanation: 'Correcto. Los errores en la preparación, manejo o administración (como usar una vía incorrecta o inyecciones no estériles) constituyen errores programáticos prevenibles[cite: 327].'
+      explanation: 'Correcto. Los errores en la preparación, manejo o administración (como usar una vía incorrecta o inyecciones no estériles) constituyen errores programáticos prevenibles.'
     },
     {
-      text: 'Con respecto a la vigilancia de vacunas, el TARC debe enviar al Sistema Nacional de Farmacovigilancia de la ANMAT la información sobre eventos adversos serios dentro de las 72 horas desde su conocimiento[cite: 329].',
+      text: 'Con respecto a la vigilancia de vacunas, el TARC debe enviar al Sistema Nacional de Farmacovigilancia de la ANMAT la información sobre eventos adversos serios dentro de las 72 horas desde su conocimiento.',
       correct: true,
-      explanation: 'Correcto. Los eventos serios de vacunas deben ser enviados al Sistema Nacional de Farmacovigilancia en un plazo de 72 horas desde su conocimiento por parte del TARC[cite: 329].'
+      explanation: 'Correcto. Los eventos serios de vacunas deben ser enviados al Sistema Nacional de Farmacovigilancia en un plazo de 72 horas desde su conocimiento por parte del TARC.'
     },
     {
-      text: 'El Plan de Gestión de Riesgo (PGR) se divide en dos partes: la Parte I, que incluye las especificaciones de seguridad y el plan de farmacovigilancia, y la Parte II, que evalúa la necesidad de actividades de minimización de riesgos[cite: 323].',
+      text: 'El Plan de Gestión de Riesgo (PGR) se divide en dos partes: la Parte I, que incluye las especificaciones de seguridad y el plan de farmacovigilancia, y la Parte II, que evalúa la necesidad de actividades de minimización de riesgos.',
       correct: true,
-      explanation: 'Correcto. La estructura del PGR formaliza en su Parte I las especificaciones de seguridad y el plan de farmacovigilancia, y en su Parte II la evaluación y planes de minimización de riesgos[cite: 323].'
+      explanation: 'Correcto. La estructura del PGR formaliza en su Parte I las especificaciones de seguridad y el plan de farmacovigilancia, y en su Parte II la evaluación y planes de minimización de riesgos.'
     },
     {
       text: 'Para que una notificación de sospecha de reacción adversa sea aceptada como reporte válido con la mínima información indispensable, se requiere únicamente el nombre de la droga y el resultado final del paciente.',
       correct: false,
-      explanation: 'Falso. La información mínima indispensable consiste en: fecha de comienzo del evento adverso, fecha de comienzo de administración de la medicación sospechosa, edad del paciente, descripción completa del evento y nombre de la droga (DCA y marca)[cite: 315].'
+      explanation: 'Falso. La información mínima indispensable consiste en: fecha de comienzo del evento adverso, fecha de comienzo de administración de la medicación sospechosa, edad del paciente, descripción completa del evento y nombre de la droga (DCA y marca).'
     },
     {
       text: 'Las notificaciones de reportes no serios de reacciones adversas deben ser remitidas por los laboratorios al Departamento de Farmacovigilancia de la ANMAT por vía electrónica de manera anual.',
       correct: false,
-      explanation: 'Falso. Las notificaciones de reportes no serios deben enviarse por vía electrónica de manera bimestral utilizando el formulario correspondiente[cite: 315].'
+      explanation: 'Falso. Las notificaciones de reportes no serios deben enviarse por vía electrónica de manera bimestral utilizando el formulario correspondiente.'
     }
   ],
   legalRefs: [
-    'Disp. ANMAT 5358/12 (Cap. 1): Responsabilidades del TARC, plazos de notificación (7 días para muertes, 15 días para serios), exposiciones en embarazos y prohibición de comunicación previa de 24 horas[cite: 315, 316].',
-    'Disp. ANMAT 5358/12 (Cap. 1.2 y 1.3): Funciones del Responsable de Farmacovigilancia (RFV) como único interlocutor y organización del área[cite: 316, 317].',
-    'Disp. ANMAT 5358/12 (Cap. 2): Informes Periódicos de Actualización de Seguridad (IPAS) y su periodicidad estándar semestral/anual/trianual[cite: 320].',
-    'Disp. ANMAT 5358/12 (Cap. 3): Planes de Gestión de Riesgo (PGR), Partes I y II, y especificaciones de seguridad[cite: 323].',
-    'Disp. ANMAT 5358/12 (Cap. 4): Farmacovigilancia en vacunas, clasificación de ESAVI (errores programáticos, eventos relacionados/coincidentes) y plazos de reporte serio (72 horas)[cite: 327, 328, 329].'
+    'Disp. ANMAT 5358/12 (Cap. 1): Responsabilidades del TARC, plazos de notificación (7 días para muertes, 15 días para serios), exposiciones en embarazos y prohibición de comunicación previa de 24 horas.',
+    'Disp. ANMAT 5358/12 (Cap. 1.2 y 1.3): Funciones del Responsable de Farmacovigilancia (RFV) como único interlocutor y organización del área.',
+    'Disp. ANMAT 5358/12 (Cap. 2): Informes Periódicos de Actualización de Seguridad (IPAS) y su periodicidad estándar semestral/anual/trianual.',
+    'Disp. ANMAT 5358/12 (Cap. 3): Planes de Gestión de Riesgo (PGR), Partes I y II, y especificaciones de seguridad.',
+    'Disp. ANMAT 5358/12 (Cap. 4): Farmacovigilancia en vacunas, clasificación de ESAVI (errores programáticos, eventos relacionados/coincidentes) y plazos de reporte serio (72 horas).'
+  ],
+  reviewPdfs: [
+    {
+      label: 'PDF Unidad 8',
+      file: 'unidad8.pdf'
+    }
   ]
 };
-
-// ==========================================
-// CONTROLADOR CENTRAL
-// ==========================================
 
 // ==========================================
 // CONTROLADOR CENTRAL
@@ -628,8 +673,7 @@ function renderSidebar(){
           + '</button>';
   }
   nav.innerHTML = html;
-  
-  // Actualizar el texto del botón móvil con la unidad actual
+
   if (mobileNavCurrent) {
     mobileNavCurrent.innerText = 'Unidad ' + currentUnit;
   }
@@ -638,8 +682,7 @@ function renderSidebar(){
     btn.addEventListener('click', function(){
       currentUnit = Number(btn.dataset.unit);
       answers = {};
-      
-      // Cerrar menú móvil al seleccionar unidad
+
       if (unitIndexNav.classList.contains('show')) {
         unitIndexNav.classList.remove('show');
         mobileNavToggle.setAttribute('aria-expanded', 'false');
@@ -687,6 +730,22 @@ function buildUnitHtml(unitNum){
 
   const refsHtml = unit.legalRefs.map(function(r){ return '<li>' + r + '</li>'; }).join('');
 
+  let pdfsHtml = '';
+  if (Array.isArray(unit.reviewPdfs) && unit.reviewPdfs.length > 0) {
+    const links = unit.reviewPdfs.map(function(pdf){
+      const href = PDF_FOLDER + encodeURI(pdf.file);
+      return '<a class="pdf-link" href="' + href + '" target="_blank" rel="noopener noreferrer">'
+        + '<span>📄 ' + pdf.label + '</span>'
+        + '<span aria-hidden="true">↗</span>'
+        + '</a>';
+    }).join('');
+
+    pdfsHtml = '<div class="review-pdfs">'
+      + '<p class="review-pdfs-title">Documentos para consultar y estudiar:</p>'
+      + '<div class="pdf-links">' + links + '</div>'
+      + '</div>';
+  }
+
   return '<p class="unit-label">Unidad ' + unitNum + '</p>'
     + '<h2 class="unit-title">' + unit.title + '</h2>'
     + '<p class="unit-intro">' + unit.intro + '</p>'
@@ -695,7 +754,7 @@ function buildUnitHtml(unitNum){
     + '<div class="stat"><strong>' + correctCount + '</strong><span>coincidencias con la normativa</span></div>'
     + '</div>'
     + '<ul class="item-list">' + itemsHtml + '</ul>'
-    + '<div class="legal-summary"><h3>Para repasar</h3><ul>' + refsHtml + '</ul></div>'
+    + '<div class="legal-summary"><h3>Para repasar</h3><ul>' + refsHtml + '</ul>' + pdfsHtml + '</div>'
     + '<button class="reset-btn" id="resetBtn">Reiniciar ejercicio</button>';
 }
 
